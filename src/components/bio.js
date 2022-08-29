@@ -8,6 +8,10 @@
 import * as React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
+import styled from "styled-components"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faBars, faCalendar } from '@fortawesome/free-solid-svg-icons'
+import { faTwitter, faInstagram } from '@fortawesome/free-brands-svg-icons'
 
 const Bio = () => {
   const data = useStaticQuery(graphql`
@@ -31,28 +35,89 @@ const Bio = () => {
   const social = data.site.siteMetadata?.social
 
   return (
-    <div className="bio">
+    <BioWrapper>
+      <h2>この記事を書いた人</h2>
       <StaticImage
         className="bio-avatar"
         layout="fixed"
         formats={["auto", "webp", "avif"]}
-        src="../images/profile-pic.png"
-        width={50}
-        height={50}
+        src="../images/common/naomi.png"
+        width={100}
+        height={100}
         quality={95}
         alt="Profile picture"
       />
       {author?.name && (
-        <p>
-          Written by <strong>{author.name}</strong> {author?.summary || null}
-          {` `}
-          <a href={`https://twitter.com/${social?.twitter || ``}`}>
-            You should follow them on Twitter
-          </a>
-        </p>
+        <>
+          <p>
+            <strong>{author.name}</strong>/{author?.summary || null}
+          </p>
+          <Sns>
+            <li>
+              <a
+                href={`https://twitter.com/${social?.twitter || ``}`}
+                target="_blank"
+                rel="noopener"
+                className="tw"
+              >
+                <FontAwesomeIcon icon={faTwitter} />
+                Twitter
+              </a>
+            </li>
+          </Sns>
+        </>
       )}
-    </div>
+    </BioWrapper>
   )
 }
 
 export default Bio
+
+const BioWrapper = styled.div`
+  text-align:center;
+
+  .bio-avatar {
+    display: block;
+    border-radius: 50%;
+    margin: 0 auto;
+  }
+  h2 {
+      font-size: 18px;
+  }
+`
+const Sns = styled.ul`
+  list-style: none;
+  display: flex;
+  margin: 0 0 15px;
+  padding: 0;
+  justify-content: center;
+
+  li {
+      margin: 0 5px;
+  }
+  a {
+      text-decoration: none;
+      display: flex;
+      height: 40px;
+      justify-content: center;
+      align-items: center;
+      border: solid 2px;
+      font-weight: 700;
+      border-radius: 10px;
+      color: #fff;
+      padding: 0 20px;;
+
+      &.tw {
+          background: #04A0F6;
+      }
+      &.insta {
+          background: #CF2E92;
+      }
+      &.yt {
+          background:#C4302B ;
+      }
+  }
+  svg {
+      margin-right: 10px;
+  }
+`

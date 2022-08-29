@@ -5,33 +5,62 @@ import Bio from "../components/bio"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
+
+import styled from "styled-components"
+
+
 const BlogPostTemplate = ({
-  data: { previous, next, site, markdownRemark: post },
+  data,
   location,
 }) => {
-  const siteTitle = site.siteMetadata?.title || `Title`
-
+  const post = data.markdownRemark
+  const siteTitle = data.site.siteMetadata?.title || `Title`
+  const { previous, next } = data
+  const eyeCatchImg = data.allFile.edges[0].node.childImageSharp;
+  const { cate, tags } = data.markdownRemark.frontmatter
   return (
     <Layout location={location} title={siteTitle}>
-      <article
+      <Article
         className="blog-post"
         itemScope
         itemType="http://schema.org/Article"
       >
         <header>
           <h1 itemProp="headline">{post.frontmatter.title}</h1>
-          <p>{post.frontmatter.date}</p>
+          <div className="keyvisual">
+            <GatsbyImage
+              image={getImage(eyeCatchImg)}
+              alt={post.frontmatter.title}
+              key={post.frontmatter.title}
+            />
+          </div>
+          <p className="date">
+            更新日：
+            <time datetime={post.frontmatter.date}>
+              {post.frontmatter.date}
+            </time>
+          </p>
         </header>
-        <section
+                <Dl>
+          <dt>カテゴリ</dt>
+          <dd>{cate}</dd>
+        </Dl>
+        <Dl>
+          <dt>タグ</dt>
+          {tags.map((tag, index) => {
+            return <dd key={`tag${index}`}>{tag}</dd>
+          })}
+        </Dl>
+        <BlogEntry
           dangerouslySetInnerHTML={{ __html: post.html }}
           itemProp="articleBody"
         />
-        <hr />
         <footer>
           <Bio />
         </footer>
-      </article>
-      <nav className="blog-post-nav">
+      </Article>
+      <BlogPostNav className="blog-post-nav">
         <ul
           style={{
             display: `flex`,
@@ -56,7 +85,7 @@ const BlogPostTemplate = ({
             )}
           </li>
         </ul>
-      </nav>
+      </BlogPostNav>
     </Layout>
   )
 }
@@ -77,10 +106,30 @@ export const pageQuery = graphql`
     $id: String!
     $previousPostId: String
     $nextPostId: String
+    $hero: String
   ) {
     site {
       siteMetadata {
         title
+      }
+    }
+    allFile(
+      filter: {
+        relativePath: { eq: $hero }
+        sourceInstanceName: { eq: "images" }
+      }
+    ) {
+      edges {
+        node {
+          relativePath
+          childImageSharp {
+            gatsbyImageData(
+              width: 1000
+              formats: [AUTO, WEBP, AVIF]
+              placeholder: BLURRED
+            )
+          }
+        }
       }
     }
     markdownRemark(id: { eq: $id }) {
@@ -89,8 +138,10 @@ export const pageQuery = graphql`
       html
       frontmatter {
         title
-        date(formatString: "MMMM DD, YYYY")
+        date(formatString: "YYYY-MM-DD")
         description
+        cate
+        tags
       }
     }
     previous: markdownRemark(id: { eq: $previousPostId }) {
@@ -108,6 +159,57 @@ export const pageQuery = graphql`
       frontmatter {
         title
       }
+    }
+  }
+`
+const Article = styled.article`
+  max-width: 750px;
+  margin: 0 auto;
+
+  .date {
+    font-weight: 700;
+
+    time {
+      font-size: 1.4rem;
+    }
+  }
+
+  .keyvisual {
+    text-align: center;
+  }
+`
+const BlogEntry = styled.section`
+  margin: 15px 0 30px;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+`
+const BlogPostNav = styled.nav`
+  max-width: 750px;
+  margin: 0 auto;
+
+  ul {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+  }
+`
+const Dl = styled.dl`
+  display: flex;
+  margin: 0;
+
+  dt {
+    width: 80px;
+    font-weight: 700;
+  }
+
+  dd {
+    font-size: 14px;
+    margin-left: 0;
+    padding-left: 0;
+
+    & + dd {
+      margin-left: 15px;
+      margin-bottom: 5px;
     }
   }
 `
