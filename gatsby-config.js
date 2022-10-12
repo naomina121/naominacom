@@ -76,6 +76,40 @@ module.exports = {
         },
       },
       {
+        resolve: `gatsby-transformer-remark`,
+          options: {
+            plugins: [
+              {
+                resolve: `gatsby-remark-autolink-headers`,
+                options: {
+                  icon: false,
+                  maintainCase: false,
+                },
+              },
+              {
+                resolve: "gatsby-remark-component",
+                options: { components: ["my-component", "other-component"] }
+              },
+              {
+                resolve: `gatsby-remark-images`,
+                options: { maxWidth: 630},
+              },
+              `gatsby-remark-responsive-iframe`,
+              `gatsby-remark-reading-time`,
+            ],
+          }
+      },
+      {
+        resolve: `gatsby-remark-responsive-iframe`,
+        options: {
+          wrapperStyle: `margin-bottom: 1.0725rem`,
+        },
+      },
+      `gatsby-remark-prismjs`,
+      `gatsby-remark-copy-linked-files`,
+      `gatsby-remark-smartypants`,
+
+      {
       resolve: `gatsby-plugin-feed`,
       options: {
         query: `
@@ -92,44 +126,38 @@ module.exports = {
         `,
         feeds: [
           {
-            serialize: (post) => {
-              const rssMetadata = post.query.site.siteMetadata
-              return post.query.allAirtable.edges.map(edge => ({
-                date: edge.node.data.date,
-                title: edge.node.data.title,
-                description: edge.node.data.body.childMarkdownRemark.excerpt,
-                url: rssMetadata.siteUrl + '/' + edge.node.data.slug,
-                guid: rssMetadata.siteUrl + '/' + edge.node.data.slug,
-                custom_elements: [
-                  {
-                    'content:encoded': edge.node.data.body.childMarkdownRemark.html,
-                  },
-                ],
-              }))
+            serialize: ({ query: { site, allMarkdownRemark } }) => {
+              return allMarkdownRemark.nodes.map(node => {
+                return Object.assign({}, node.frontmatter, {
+                  description: node.excerpt,
+                  date: node.frontmatter.date,
+                  url: site.siteMetadata.siteUrl + node.fields.slug,
+                  guid: site.siteMetadata.siteUrl + node.fields.slug,
+                  custom_elements: [{ "content:encoded": node.html }],
+                })
+              })
             },
             query: `
-            {
-              allAirtable(limit:1000, sort: {fields: [data___date], order: DESC}) {
-                edges {
-                  node {
-                    data {
-                      title
-                      date(formatString: "ddd, DD MMM YYYY, h:mm:ss +0900")
+              {
+                allMarkdownRemark(
+                  sort: { order: DESC, fields: [frontmatter___date] },
+                ) {
+                  nodes {
+                    excerpt
+                    html
+                    fields {
                       slug
-                      body {
-                        childMarkdownRemark {
-                          excerpt
-                          html
-                        }
-                      }
+                    }
+                    frontmatter {
+                      title
+                      date
                     }
                   }
                 }
               }
-            }
             `,
             output: "/rss.xml",
-            title: "ナオのメンタルヘルス RSS Feed",
+            title: "ナオのメンタルヘルス",
           },
         ],
       },
