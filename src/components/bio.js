@@ -75,14 +75,17 @@ export default Bio
 
 const BioWrapper = styled.div`
   text-align:center;
+  background:#f5f5f5;
+  padding:30px;
+  border-radius:4px;
+  h2{
+    border:none;
+  }
 
   .bio-avatar {
     display: block;
     border-radius: 50%;
     margin: 0 auto;
-  }
-  h2 {
-      font-size: 18px;
   }
 `
 const Sns = styled.ul`

@@ -1,15 +1,13 @@
-import * as React from "react"
+import React, { useState, useEffect } from 'react';
 import { Link } from "gatsby"
-
 import { siteMetadata } from "../../gatsby-config"
-
-import styled from "styled-components"
+// import styled from "styled-components"
 
 const Header = ({ location }) => {
+  const [active, setActive] = useState(false);
   const rootPath = `${__PATH_PREFIX__}/`
   const isRootPath = location.pathname === rootPath
   let siteName
-
   if (isRootPath) {
     siteName = <h1 className="logo">{siteMetadata.title}</h1>
   } else {
@@ -19,63 +17,59 @@ const Header = ({ location }) => {
       </p>
     )
   }
+
+  // メニューをクリックした時
+
+  const toggleFunction = () => {
+    setActive(!active)
+  }
   return (
-    <HeaderWrapper>
+    <header>
       <div className="container">
         {siteName}
+  <div className="hm">
+      <button
+        className={active ? "open hamburger" : "hamburger"}
+        controls="navigation"
+        label="メニューを開きます"
+        onClick={toggleFunction}>
+        <span className="hamburger_bar"></span>
+        <span className="hamburger_bar"></span>
+        <span className="hamburger_bar"></span>
+      </button>
+      <nav id="navigation"  className={active ? "open" : ""} >
+                <ul class="menu__box">
+                  <li><Link to="/">トップページ</Link></li>
+                  <li><Link to="/blogs/depression/">うつ病</Link></li>
+                  <li><Link to="/blogs/schizophrenia/">統合失調症</Link></li>
+                  <li><Link to="/blogs/mentalillness">その他の精神疾患</Link></li>
+                  <li><Link to="/blogs/mentalhealth/">メンタルヘルス</Link></li>
+                  <li><Link to="/about/">当サイトについて</Link></li>
+                </ul>
+              </nav>
+        </div>
         <nav>
           <ul>
             <li>
-              <Link to="/blogs/">ブログ</Link>
+              <Link to="/blogs/depression/">うつ病</Link>
             </li>
             <li>
-              <Link to="/about/">About Me</Link>
+              <Link to="/blogs/schizophrenia/">統合失調症</Link>
             </li>
             <li>
-              <Link to="/contact/">Contact</Link>
+              <Link to="/blogs/mentalillness">その他の精神疾患</Link>
+            </li>
+            <li>
+              <Link to="/blogs/mentalhealth/">メンタルヘルス</Link>
+            </li>
+            <li>
+              <Link to="/about/">当サイトについて</Link>
             </li>
           </ul>
         </nav>
       </div>
-    </HeaderWrapper>
+    </header>
   )
 }
 export default Header
 
-const HeaderWrapper = styled.header`
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
-
-  .container {
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  .logo {
-    font-size: 18px;
-    margin: 0;
-    font-weight: bold;
-
-    a {
-      text-decoration: none;
-      color: var(--black);
-    }
-  }
-
-  nav ul {
-    margin: 0;
-    list-style: none;
-    display: flex;
-
-    li {
-      padding: 0 0 0 20px;
-
-      a {
-        text-decoration: none;
-        color: var(--black);
-        font-weight: bold;
-      }
-    }
-  }
-`

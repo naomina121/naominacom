@@ -1,24 +1,30 @@
 import * as React from "react"
 import { Link, graphql } from "gatsby"
 
-import Bio from "../components/bio"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-import Img from "../components/img"
+import BreadCrumbList from "../components/breadcrumb-list"
 import { BlogListWrapper, BlogListHeader } from "../style/blog-list-style"
 import TagCloud from "../components/tag-cloud"
 import ModalSeach from "../components/modal-search"
+//画像読み込み
+import Img from "../components/img"
+// 追加
 import { siteMetadata } from "../../gatsby-config"
 
-const BlogIndex = ({ data, location }) => {
-  const siteTitle = data.site.siteMetadata?.title || `Title`
-  const posts = data.allMarkdownRemark.nodes
+import Pagination from "../components/pagination"
+
+const CateList = ({ pageContext, data, location }) => {
+  const { page, current, cateSlug } = pageContext
+  const { nodes } = data.allMarkdownRemark
+  const posts = nodes
+
+  const cate = siteMetadata.category.find(item => item.slug === cateSlug)
 
   if (posts.length === 0) {
     return (
-      <Layout location={location} title={siteTitle}>
-        <Seo title="All posts" />
-        <Bio />
+      <Layout location={location} title="記事一覧">
+        <Seo title="All posts" location={location} />
         <p>
           No blog posts found. Add markdown posts to "content/blog" (or the
           directory you specified for the "gatsby-source-filesystem" plugin in
@@ -29,16 +35,21 @@ const BlogIndex = ({ data, location }) => {
   }
 
   return (
-    <Layout location={location} title={siteTitle}>
-      <Seo title={siteTitle} location={location} />
+    <Layout location={location} title={cate.name}>
+      <Seo
+        title={cate.name}
+        location={location}
+        type="list-child"
+        discription={`${cate.name}一覧記事です。${cate.description}`}
+      />
+      <BreadCrumbList parent="blogs" location={location} title={cate.name} />
       <BlogListHeader>
-        <h2>最新記事</h2>
+        <h1>{cate.name}</h1>
+        <p>{cate.description}</p>
       </BlogListHeader>
       <BlogListWrapper>
         {posts.map(post => {
           const title = post.frontmatter.title || post.fields.slug
-          const cate = post.frontmatter.cate
-          const cateName = siteMetadata.category.find(item => item.slug === cate).name
           const tags = post.frontmatter.tags
           return (
             <li key={post.fields.slug}>
@@ -60,14 +71,13 @@ const BlogIndex = ({ data, location }) => {
                   </small>
                 </Link>
                 <section>
-                <h3>
+                <h2>
                   <Link to={post.fields.slug} itemProp="url">
                     <span itemProp="headline">{title}</span>
                   </Link>
-                </h3>
-                <Link className="cate" to={`/blogs/${cate}/`}>{cateName}</Link>
+                </h2>
 
-                <ul class="tags">
+                  <ul class="tags">
                   {tags.map((tag, index) => {
                     return (
                       <li key={`tag${index}`}>
@@ -88,6 +98,7 @@ const BlogIndex = ({ data, location }) => {
           )
         })}
       </BlogListWrapper>
+      <Pagination num={page} current={current} type={cateSlug} ></Pagination>
       <h2>サイト内検索</h2>
       <ModalSeach></ModalSeach>
             <BlogListHeader>
@@ -101,19 +112,23 @@ const BlogIndex = ({ data, location }) => {
   )
 }
 
-export default BlogIndex
+export default CateList
 
 export const pageQuery = graphql`
-  query {
+  query ($cateSlug: String, $limit: Int!, $skip: Int!) {
     site {
       siteMetadata {
         title
       }
     }
     allMarkdownRemark(
-      limit: 6
+      limit: $limit
+      skip: $skip
       sort: { fields: [frontmatter___date], order: DESC }
-      filter: { frontmatter: { pagetype: { eq: "blog" } } }
+      # pagetype=blogかつ cateが $cateSlugと一致するものだけ絞り込む
+      filter: {
+        frontmatter: { pagetype: { eq: "blog" }, cate: { eq: $cateSlug } }
+      }
     ) {
       nodes {
         excerpt
@@ -121,10 +136,12 @@ export const pageQuery = graphql`
           slug
         }
         frontmatter {
-          date(formatString: "YYYY-MM-DD")
+          date(formatString: "YYYY.MM.DD")
           title
           description
+          # 画像を引っ張り出すのに使います
           hero
+          # カテゴリーやタグを出力したいなら
           cate
           tags
         }

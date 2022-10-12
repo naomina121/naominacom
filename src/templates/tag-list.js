@@ -1,24 +1,28 @@
 import * as React from "react"
 import { Link, graphql } from "gatsby"
-
-import Bio from "../components/bio"
-import Layout from "../components/layout"
-import Seo from "../components/seo"
-import Img from "../components/img"
-import { BlogListWrapper, BlogListHeader } from "../style/blog-list-style"
 import TagCloud from "../components/tag-cloud"
 import ModalSeach from "../components/modal-search"
+import Layout from "../components/layout"
+import Seo from "../components/seo"
 import { siteMetadata } from "../../gatsby-config"
+import BreadCrumbList from "../components/breadcrumb-list"
+import { BlogListWrapper, BlogListHeader } from "../style/blog-list-style"
 
-const BlogIndex = ({ data, location }) => {
-  const siteTitle = data.site.siteMetadata?.title || `Title`
-  const posts = data.allMarkdownRemark.nodes
+//画像読み込み
+import Img from "../components/img"
+
+import Pagination from "../components/pagination"
+
+const TagList = ({ pageContext, data, location }) => {
+  const { page, current, tag } = pageContext
+  const { totalCount, nodes } = data.allMarkdownRemark
+  const posts = nodes
+  const title = "記事一覧"
 
   if (posts.length === 0) {
     return (
-      <Layout location={location} title={siteTitle}>
-        <Seo title="All posts" />
-        <Bio />
+      <Layout location={location} title={title}>
+        <Seo title="All posts" location={location} />
         <p>
           No blog posts found. Add markdown posts to "content/blog" (or the
           directory you specified for the "gatsby-source-filesystem" plugin in
@@ -29,17 +33,24 @@ const BlogIndex = ({ data, location }) => {
   }
 
   return (
-    <Layout location={location} title={siteTitle}>
-      <Seo title={siteTitle} location={location} />
+    <Layout location={location} title={tag}>
+      <Seo
+        title={tag}
+        location={location}
+        type="tag-list"
+        discription={`${tag}一覧記事です。`}
+      />
+      <BreadCrumbList parent="tags" location={location} title={tag} />
+
       <BlogListHeader>
-        <h2>最新記事</h2>
+        <h1>{tag}</h1>
+        <p>現在 {totalCount} 記事あります</p>
       </BlogListHeader>
       <BlogListWrapper>
         {posts.map(post => {
           const title = post.frontmatter.title || post.fields.slug
           const cate = post.frontmatter.cate
           const cateName = siteMetadata.category.find(item => item.slug === cate).name
-          const tags = post.frontmatter.tags
           return (
             <li key={post.fields.slug}>
               <article
@@ -60,22 +71,12 @@ const BlogIndex = ({ data, location }) => {
                   </small>
                 </Link>
                 <section>
-                <h3>
+                <h2>
                   <Link to={post.fields.slug} itemProp="url">
                     <span itemProp="headline">{title}</span>
                   </Link>
-                </h3>
+                </h2>
                 <Link className="cate" to={`/blogs/${cate}/`}>{cateName}</Link>
-
-                <ul class="tags">
-                  {tags.map((tag, index) => {
-                    return (
-                      <li key={`tag${index}`}>
-                          <Link className="tag" to={`/blogs/tags/${tag}/`}>{tag}</Link>
-                      </li>
-                    )
-                })}
-                </ul>
                   <p
                     dangerouslySetInnerHTML={{
                       __html: post.frontmatter.description || post.excerpt,
@@ -88,6 +89,7 @@ const BlogIndex = ({ data, location }) => {
           )
         })}
       </BlogListWrapper>
+      <Pagination num={page} current={current} type={`tags/${tag}`} ></Pagination>
       <h2>サイト内検索</h2>
       <ModalSeach></ModalSeach>
             <BlogListHeader>
@@ -101,30 +103,38 @@ const BlogIndex = ({ data, location }) => {
   )
 }
 
-export default BlogIndex
+export default TagList
 
 export const pageQuery = graphql`
-  query {
+  query ($tag: String, $limit: Int!, $skip: Int!) {
     site {
       siteMetadata {
         title
       }
     }
     allMarkdownRemark(
-      limit: 6
+      limit: $limit
+      skip: $skip
       sort: { fields: [frontmatter___date], order: DESC }
-      filter: { frontmatter: { pagetype: { eq: "blog" } } }
+      # pagetype=blogで絞り込む
+      filter: {
+        frontmatter: { pagetype: { eq: "blog" }, tags: { in: [$tag] } }
+      }
     ) {
+      # 記事総数取得
+      totalCount
       nodes {
         excerpt
         fields {
           slug
         }
         frontmatter {
-          date(formatString: "YYYY-MM-DD")
+          date(formatString: "YYYY.MM.DD")
           title
           description
+          # 画像を引っ張り出すのに使います
           hero
+          # カテゴリーやタグを出力したいなら
           cate
           tags
         }

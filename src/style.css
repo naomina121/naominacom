@@ -18,3 +18,52 @@ body {
   margin: 0 auto;
   padding: 10px 15px;
 }
+
+
+.modalWrapper {
+  text-align: center;
+  padding: 20px 0;
+}
+.modalWrapper button,
+.modalSearchWindow button {
+  padding: 10px 20px;
+  font-family: helvetica;
+}
+.modalSearchOverlay {
+  z-index: 960;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  background-color: rgba(0, 0, 0, 0.75);
+}
+.modalSearchWindow {
+  z-index: 965;
+  background: #fff;
+  margin: 4vw auto 0;
+  margin-right: -50%;
+  padding: 40px;
+  inset: 50% auto auto 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  border: 1px solid rgb(204, 204, 204);
+  overflow: auto;
+  border-radius: 4px;
+  outline: none;
+  max-width: 750px;
+  max-height: 600px;
+  width:100%;
+  height:100%;
+}
+
+.modalSearchWindow > div{
+  padding:40px 10px;
+}
+.result-inner__search{
+  padding-left:0;
+}
+
+.ReactModal__Overlay button{
+  margin-left:10px;
+}
