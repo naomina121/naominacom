@@ -5,7 +5,7 @@ import Layout from "../components/layout"
 import Seo from "../components/seo"
 import BreadCrumbList from "../components/breadcrumb-list"
 
-const TagsList = ({ data, location }) => {
+const TagsList = ({ location }) => {
 
   return (
     <Layout location={location} title="ナオのメンタルヘルス">
@@ -34,25 +34,25 @@ const TagsList = ({ data, location }) => {
 
 export default TagsList
 
-export const pageQuery = graphql`
-  query PagePostBySlug($id: String!) {
-    site {
-      siteMetadata {
-        title
-      }
-    }
-    markdownRemark(id: { eq: $id }) {
-      id
-      excerpt(pruneLength: 160)
-      html
-      tableOfContents(maxDepth: 3)
-      frontmatter {
-        title
-        date(formatString: "YYYY-MM-DD")
-        description
-        cate
-        tags
-      }
-    }
-  }
-`
+// export const pageQuery = graphql`
+//   query PagePostBySlug($id: String!) {
+//     site {
+//       siteMetadata {
+//         title
+//       }
+//     }
+//     markdownRemark(id: { eq: $id }) {
+//       id
+//       excerpt(pruneLength: 160)
+//       html
+//       tableOfContents(maxDepth: 3)
+//       frontmatter {
+//         title
+//         date(formatString: "YYYY-MM-DD")
+//         description
+//         cate
+//         tags
+//       }
+//     }
+//   }
+// `
