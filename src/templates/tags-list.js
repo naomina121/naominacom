@@ -1,6 +1,6 @@
 import * as React from "react"
 import TagCloud from "../components/tag-cloud"
-
+import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import BreadCrumbList from "../components/breadcrumb-list"
