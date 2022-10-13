@@ -114,13 +114,6 @@ const BlogList = ({ pageContext, data, location }) => {
 
 export default BlogList
 
-/**
- * Head export to define metadata for the page
- *
- * See: https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-head/
- */
-export const Head = () => <Seo title="All posts" />
-
 export const pageQuery = graphql`
   query ($limit: Int!, $skip: Int!) {
     site {

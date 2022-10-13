@@ -44,10 +44,14 @@ const Seo = props => {
 
   const metaDescription = description || site.siteMetadata.description
   const defaultTitle = site.siteMetadata?.title
-    const imgPath = `${site.siteMetadata.siteUrl.replace(/\/$/, "")}${img ? img : "/images/ogp.png"}`
+  const imgPath = `${site.siteMetadata.siteUrl.replace(/\/$/, "")}${
+    img ? img : "/images/ogp.png"
+  }`
   const rootPath = `${__PATH_PREFIX__}/`
   const isRootPath = location.pathname === rootPath
+
   let blogUrl = location ? location.href : site.siteMetadata.siteUrl
+  // ページネーション削除
   blogUrl = String(blogUrl).replace(/page\/([0-9])+\//, "")
 
   // 執筆者情報
@@ -77,7 +81,7 @@ const Seo = props => {
     },
   }
 
-// JSON+LDの設定
+  // JSON+LDの設定
   let jsonLd = [
     {
       "@context": "http://schema.org",
@@ -163,7 +167,6 @@ const Seo = props => {
     ]
   }
 
-
   return (
     <Helmet
       htmlAttributes={{
@@ -188,7 +191,7 @@ const Seo = props => {
           property: `og:description`,
           content: metaDescription,
         },
-      {
+        {
           property: `og:type`,
           content: `${isRootPath ? "website" : "webpage"}`,
         },
@@ -222,7 +225,8 @@ const Seo = props => {
         },
       ].concat(meta)}
     >
-    <link rel="canonical" href={blogUrl} />
+      <link rel="canonical" href={blogUrl} />
+      <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
     </Helmet>
   )
 }
