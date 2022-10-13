@@ -34,19 +34,18 @@ module.exports = {
     ],
 },
   plugins: [
-    `gatsby-plugin-styled-components`,
     {
       resolve: `gatsby-plugin-google-gtag`,
       options: {
         trackingIds: [
-          process.env.GOOGLE_ANALYTICS_TRACKING_ID,//トラッキングID
-          process.env.GOOGLE_ADSENSE_ID,//アドセンスID
+          process.env.GATSBY_TRACKING_ID,//トラッキングID
         ],
         pluginConfig: {
           head: true,
         },
       },
     },
+    `gatsby-plugin-styled-components`,
     {
       resolve: `gatsby-plugin-sitemap`,
       options: {
