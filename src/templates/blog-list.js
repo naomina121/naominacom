@@ -5,6 +5,7 @@ import Layout from "../components/layout"
 import Seo from "../components/seo"
 import TagCloud from "../components/tag-cloud"
 import ModalSeach from "../components/modal-search"
+import BreadCrumbList from "../components/breadcrumb-list"
 
 import { BlogListWrapper, BlogListHeader } from "../style/blog-list-style"
 
@@ -40,6 +41,7 @@ const BlogList = ({ pageContext, data, location }) => {
         description="記事一覧です。"
         type="blog-list"
       />
+    <BreadCrumbList parent="root" location={location} title={title} />
       <BlogListHeader>
         <h1>{title}</h1>
         <p>現在 {totalCount} 記事あります</p>
