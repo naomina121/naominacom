@@ -10,7 +10,7 @@ import {
 
 const Share = ({postPath,postNode }) => {{
     const post = postNode.frontmatter;
-    const url = "https://naomina.com/" + postPath;
+    const url = "https://naomina.com" + postPath;
     const iconSize = 48;
 
     return (

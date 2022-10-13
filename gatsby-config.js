@@ -129,8 +129,9 @@ module.exports = {
             serialize: ({ query: { site, allMarkdownRemark } }) => {
               return allMarkdownRemark.nodes.map(node => {
                 return Object.assign({}, node.frontmatter, {
-                  description: node.excerpt,
+                  description: node.frontmatter.description,
                   date: node.frontmatter.date,
+                  title: node.frontmatter.title,
                   url: site.siteMetadata.siteUrl + node.fields.slug,
                   guid: site.siteMetadata.siteUrl + node.fields.slug,
                   custom_elements: [{ "content:encoded": node.html }],
@@ -151,6 +152,10 @@ module.exports = {
                     frontmatter {
                       title
                       date
+                      description
+                      hero
+                      cate
+                      tags
                     }
                   }
                 }
@@ -158,6 +163,8 @@ module.exports = {
             `,
             output: "/rss.xml",
             title: "ナオのメンタルヘルス",
+            feed_url: "https://naomina.com/feed/rss.xml",
+            site_url: "https://naomina.com/",
           },
         ],
       },
