@@ -10,7 +10,7 @@ import {
 
 const Share = ({postPath,postNode }) => {{
     const post = postNode.frontmatter;
-    const url = postPath;
+    const url = "https://naomina.com/" + postPath;
     const iconSize = 48;
 
     return (
@@ -24,7 +24,7 @@ const Share = ({postPath,postNode }) => {{
         <LineShareButton url={url} quote={postNode.excerpt}>
           <LineIcon round size={iconSize} />
         </LineShareButton>
-        
+
       </div>
     );
   }
