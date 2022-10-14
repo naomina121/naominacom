@@ -38,7 +38,7 @@ const Seo = props => {
   const metaDescription = description || site.siteMetadata.description
   const defaultTitle = site.siteMetadata?.title
   const imgPath = `${site.siteMetadata.siteUrl.replace(/\/$/, "")}${
-    ogpImgPath ? `images/${ogpImgPath}` : "/images/ogp.png"
+    ogpImgPath ? `/images/${ogpImgPath}` : "/images/ogp.png"
   }`
   const rootPath = `${__PATH_PREFIX__}/`
   const isRootPath = location.pathname === rootPath
