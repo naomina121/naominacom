@@ -22,40 +22,33 @@ const BreadCrumbList = ({ parent, title,location,cate}) => {
         {List.map((item, index) => {
           let link
           if(cate && index == 2){
-              link = <Link href={"/blogs" + item.lo} itemprop="item">
-                <span itemprop="name">{item.title}</span>
+              link = <Link href={"/blogs" + item.lo}>
+                <span>{item.title}</span>
               </Link>
           }else if(parent === "tags" && index == 2){
-              link = <Link href={"/blogs" + item.lo} itemprop="item">
-                <span itemprop="name">{item.title}</span>
+              link = <Link href={"/blogs" + item.lo}>
+                <span>{item.title}</span>
               </Link>
           }
           else{
-                link = <Link to={item.lo} itemprop="item">
-                <span itemprop="name">{item.title}</span>
+                link = <Link to={item.lo}>
+                <span>{item.title}</span>
               </Link>
           }
           return (
             <li
-              key={item.lo}
-              itemprop="itemListElement"
-              itemscope
-              itemtype="https://schema.org/ListItem"
-            >
+              key={item.lo}            >
               {link}
-              <meta itemprop="position" content={index + 1} />
+              <meta content={index + 1} />
 
             </li>
           )
         })}
         <li
-          itemprop="itemListElement"
-          itemscope
-          itemtype="https://schema.org/ListItem"
           key={location.pathname}
         >
-          <span itemprop="name">{title}</span>
-          <meta itemprop="position" content={List.length + 1} />
+          <span>{title}</span>
+          <meta content={List.length + 1} />
         </li>
       </ol>
     </BreadCrumbNav>

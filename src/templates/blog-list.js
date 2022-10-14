@@ -23,7 +23,6 @@ const BlogList = ({ pageContext, data, location }) => {
   if (posts.length === 0) {
     return (
       <Layout location={location} title={title}>
-        <Seo title="All posts" location={location} type="list" />
         <p>
           No blog posts found. Add markdown posts to "content/blog" (or the
           directory you specified for the "gatsby-source-filesystem" plugin in
@@ -35,12 +34,6 @@ const BlogList = ({ pageContext, data, location }) => {
 
   return (
     <Layout location={location} title={title}>
-      <Seo
-        title={title}
-        location={location}
-        description="記事一覧です。"
-        type="blog-list"
-      />
     <BreadCrumbList parent="root" location={location} title={title} />
       <BlogListHeader>
         <h1>{title}</h1>
@@ -60,7 +53,6 @@ const BlogList = ({ pageContext, data, location }) => {
               >
                 <Link
                   to={post.fields.slug}
-                  itemProp="url"
                   className="thumbnail"
                 >
                   <Img alt={title} image={post.frontmatter.hero}></Img>
@@ -72,15 +64,15 @@ const BlogList = ({ pageContext, data, location }) => {
                 </Link>
                 <section>
                 <h2>
-                  <Link to={post.fields.slug} itemProp="url">
-                    <span itemProp="headline">{title}</span>
+                  <Link to={post.fields.slug}>
+                    <span>{title}</span>
                   </Link>
                 </h2>
                 </section>
 
                 <Link className="cate" to={`/blogs/${post.frontmatter.cate}/`}>{cateName}</Link>
 
-                <ul class="tags">
+                <ul className='tags'>
                   {tags.map((tag, index) => {
                     return (
                       <li key={`tag${index}`}>
@@ -93,7 +85,6 @@ const BlogList = ({ pageContext, data, location }) => {
                     dangerouslySetInnerHTML={{
                       __html: post.frontmatter.description || post.excerpt,
                     }}
-                    itemProp="description"
                   />
               </article>
             </li>
@@ -109,12 +100,21 @@ const BlogList = ({ pageContext, data, location }) => {
       </BlogListHeader>
       <TagCloud></TagCloud>
       <h2>音声配信</h2>
-<iframe allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write" frameborder="0" width="100%" height="450" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="https://embed.podcasts.apple.com/us/podcast/%E3%83%8A%E3%82%AA%E3%81%AE%E3%83%A1%E3%83%B3%E3%82%BF%E3%83%AB%E3%83%98%E3%83%AB%E3%82%B9%E3%83%A9%E3%82%B8%E3%82%AA/id1649348148"></iframe>
+<iframe allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write" width="100%" height="450" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="https://embed.podcasts.apple.com/us/podcast/%E3%83%8A%E3%82%AA%E3%81%AE%E3%83%A1%E3%83%B3%E3%82%BF%E3%83%AB%E3%83%98%E3%83%AB%E3%82%B9%E3%83%A9%E3%82%B8%E3%82%AA/id1649348148"></iframe>
     </Layout>
   )
 }
 
 export default BlogList
+
+  export const Head = ({ data,location }) => (
+   <Seo
+     location={location}
+     title="記事一覧"
+     description="記事一覧です"
+     type="blog-list"
+   />
+)
 
 export const pageQuery = graphql`
   query ($limit: Int!, $skip: Int!) {

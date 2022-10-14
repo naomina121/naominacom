@@ -15,11 +15,6 @@ const PagePostTemplate = ({ data, location }) => {
 
   return (
     <Layout location={location} title={siteTitle}>
-      <Seo
-        title={post.frontmatter.title}
-        description={post.frontmatter.description || post.excerpt}
-        location={location}
-      />
       <Article
         className="blog-post"
         itemScope
@@ -30,11 +25,10 @@ const PagePostTemplate = ({ data, location }) => {
           title={post.frontmatter.title}
         />
         <header>
-          <h1 itemProp="headline">{post.frontmatter.title}</h1>
+          <h1>{post.frontmatter.title}</h1>
         </header>
         <BlogEntry
           dangerouslySetInnerHTML={{ __html: post.html }}
-          itemProp="articleBody"
         />
       </Article>
     </Layout>
@@ -42,6 +36,14 @@ const PagePostTemplate = ({ data, location }) => {
 }
 
 export default PagePostTemplate
+
+export const Head = ({ data,location }) => (
+   <Seo
+     title={data.site.siteMetadata.title}
+     description={data.markdownRemark.frontmatter.description || data.markdownRemark.excerpt}
+     location={location}
+   />
+)
 
 export const pageQuery = graphql`
   query PagePostBySlug($id: String!) {

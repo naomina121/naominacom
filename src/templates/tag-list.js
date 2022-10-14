@@ -22,7 +22,6 @@ const TagList = ({ pageContext, data, location }) => {
   if (posts.length === 0) {
     return (
       <Layout location={location} title={title}>
-        <Seo title="All posts" location={location} />
         <p>
           No blog posts found. Add markdown posts to "content/blog" (or the
           directory you specified for the "gatsby-source-filesystem" plugin in
@@ -34,12 +33,6 @@ const TagList = ({ pageContext, data, location }) => {
 
   return (
     <Layout location={location} title={tag}>
-      <Seo
-        title={tag}
-        location={location}
-        type="tag-list"
-        discription={`${tag}一覧記事です。`}
-      />
       <BreadCrumbList parent="tags" location={location} title={tag} />
 
       <BlogListHeader>
@@ -60,7 +53,6 @@ const TagList = ({ pageContext, data, location }) => {
               >
                 <Link
                   to={post.fields.slug}
-                  itemProp="url"
                   className="thumbnail"
                 >
                   <Img alt={title} image={post.frontmatter.hero}></Img>
@@ -72,8 +64,8 @@ const TagList = ({ pageContext, data, location }) => {
                 </Link>
                 <section>
                 <h2>
-                  <Link to={post.fields.slug} itemProp="url">
-                    <span itemProp="headline">{title}</span>
+                  <Link to={post.fields.slug}>
+                    <span>{title}</span>
                   </Link>
                 </h2>
                 <Link className="cate" to={`/blogs/${cate}/`}>{cateName}</Link>
@@ -81,7 +73,6 @@ const TagList = ({ pageContext, data, location }) => {
                     dangerouslySetInnerHTML={{
                       __html: post.frontmatter.description || post.excerpt,
                     }}
-                    itemProp="description"
                   />
                 </section>
               </article>
@@ -98,12 +89,20 @@ const TagList = ({ pageContext, data, location }) => {
       </BlogListHeader>
       <TagCloud></TagCloud>
       <h2>音声配信</h2>
-<iframe allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write" frameborder="0" width="100%" height="450" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="https://embed.podcasts.apple.com/us/podcast/%E3%83%8A%E3%82%AA%E3%81%AE%E3%83%A1%E3%83%B3%E3%82%BF%E3%83%AB%E3%83%98%E3%83%AB%E3%82%B9%E3%83%A9%E3%82%B8%E3%82%AA/id1649348148"></iframe>
+<iframe allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write" width="100%" height="450" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="https://embed.podcasts.apple.com/us/podcast/%E3%83%8A%E3%82%AA%E3%81%AE%E3%83%A1%E3%83%B3%E3%82%BF%E3%83%AB%E3%83%98%E3%83%AB%E3%82%B9%E3%83%A9%E3%82%B8%E3%82%AA/id1649348148"></iframe>
     </Layout>
   )
 }
 
 export default TagList
+export const Head = ({ data,location,pageContext }) => (
+      <Seo
+        title={pageContext.tag}
+        location={location}
+        type="tag-list"
+        description={`${pageContext.tag}の一覧記事です。`}
+      />
+)
 
 export const pageQuery = graphql`
   query ($tag: String, $limit: Int!, $skip: Int!) {

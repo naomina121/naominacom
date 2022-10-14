@@ -38,7 +38,7 @@ const Header = ({ location }) => {
         <span className="hamburger_bar"></span>
       </button>
       <nav id="navigation"  className={active ? "open" : ""} >
-                <ul class="menu__box">
+                <ul className='menu__box'>
                   <li><Link to="/">トップページ</Link></li>
                   <li><Link to="/blogs/depression/">うつ病</Link></li>
                   <li><Link to="/blogs/schizophrenia/">統合失調症</Link></li>

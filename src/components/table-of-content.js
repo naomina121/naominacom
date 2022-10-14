@@ -6,7 +6,7 @@ const list = props.data.replace(/(ul>)/gi, "ol>")
 
   return (
     <TOC>
-      <input type="checkbox" class="mokuji" id="mokuji" />
+      <input type="checkbox" className='mokuji' id="mokuji" />
       <label className="heading" for="mokuji">
         目次
       </label>

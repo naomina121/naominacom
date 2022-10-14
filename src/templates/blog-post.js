@@ -42,16 +42,6 @@ const BlogPostTemplate = ({ data, location }) => {
 
   return (
    <Layout location={location} title={siteTitle}>
-      <Seo
-        title={post.frontmatter.title}
-        description={post.frontmatter.description || post.excerpt}
-        img={ogpImg}
-        location={location}
-        type="blog"
-        date={post.frontmatter.date}
-        modified={post.frontmatter.modifieddate}
-      />
-
       <Article
         className="blog-post"
         itemScope
@@ -73,7 +63,7 @@ const BlogPostTemplate = ({ data, location }) => {
           ><FontAwesomeIcon icon={['fa', 'clock']} /><p>この記事は<b>{words}文字</b>で<b>約{Math.round(minutes * 10) / 10}分</b>で読めます</p>
       </div>
         <header>
-          <h1 itemProp="headline">{post.frontmatter.title}</h1>
+          <h1>{post.frontmatter.title}</h1>
           <Share postPath={post.fields.slug} postNode={post} />
           <div className="keyvisual">
             <GatsbyImage
@@ -108,11 +98,10 @@ const BlogPostTemplate = ({ data, location }) => {
           })}
         </Dl>
         <TOC data={data.markdownRemark.tableOfContents} />
-        <BlogEntry itemProp="articleBody" className="articleBody">{renderAst(post.htmlAst)}</BlogEntry>
+        <BlogEntry className="articleBody">{renderAst(post.htmlAst)}</BlogEntry>
 
         <BlogEntry
           dangerouslySetInnerHTML={{ __html: post.html }}
-          itemProp="articleBody"
         />
         <footer>
           <Bio />
@@ -153,6 +142,16 @@ const BlogPostTemplate = ({ data, location }) => {
 }
 
 export default BlogPostTemplate
+
+  export const Head = ({ data,location }) => (
+   <Seo
+     location={location}
+     title={data.markdownRemark.frontmatter.title}
+     description={data.markdownRemark.frontmatter.description || data.markdownRemark.excerpt}
+     ogpImgPath={data.markdownRemark.frontmatter.hero}
+     type="blog"
+   />
+)
 
 export const pageQuery = graphql`
   query BlogPostBySlug(

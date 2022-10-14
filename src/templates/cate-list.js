@@ -24,7 +24,6 @@ const CateList = ({ pageContext, data, location }) => {
   if (posts.length === 0) {
     return (
       <Layout location={location} title="記事一覧">
-        <Seo title="All posts" location={location} />
         <p>
           No blog posts found. Add markdown posts to "content/blog" (or the
           directory you specified for the "gatsby-source-filesystem" plugin in
@@ -36,12 +35,6 @@ const CateList = ({ pageContext, data, location }) => {
 
   return (
     <Layout location={location} title={cate.name}>
-      <Seo
-        title={cate.name}
-        location={location}
-        type="list-child"
-        discription={`${cate.name}一覧記事です。${cate.description}`}
-      />
       <BreadCrumbList parent="blogs" location={location} title={cate.name} />
       <BlogListHeader>
         <h1>{cate.name}</h1>
@@ -60,7 +53,6 @@ const CateList = ({ pageContext, data, location }) => {
               >
                 <Link
                   to={post.fields.slug}
-                  itemProp="url"
                   className="thumbnail"
                 >
                   <Img alt={title} image={post.frontmatter.hero}></Img>
@@ -72,12 +64,12 @@ const CateList = ({ pageContext, data, location }) => {
                 </Link>
                 <section>
                 <h2>
-                  <Link to={post.fields.slug} itemProp="url">
-                    <span itemProp="headline">{title}</span>
+                  <Link to={post.fields.slug}>
+                    <span>{title}</span>
                   </Link>
                 </h2>
 
-                  <ul class="tags">
+                  <ul className='tags'>
                   {tags.map((tag, index) => {
                     return (
                       <li key={`tag${index}`}>
@@ -90,7 +82,6 @@ const CateList = ({ pageContext, data, location }) => {
                     dangerouslySetInnerHTML={{
                       __html: post.frontmatter.description || post.excerpt,
                     }}
-                    itemProp="description"
                   />
                 </section>
               </article>
@@ -107,12 +98,22 @@ const CateList = ({ pageContext, data, location }) => {
       </BlogListHeader>
       <TagCloud></TagCloud>
       <h2>音声配信</h2>
-<iframe allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write" frameborder="0" width="100%" height="450" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="https://embed.podcasts.apple.com/us/podcast/%E3%83%8A%E3%82%AA%E3%81%AE%E3%83%A1%E3%83%B3%E3%82%BF%E3%83%AB%E3%83%98%E3%83%AB%E3%82%B9%E3%83%A9%E3%82%B8%E3%82%AA/id1649348148"></iframe>
+<iframe allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write" width="100%" height="450" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="https://embed.podcasts.apple.com/us/podcast/%E3%83%8A%E3%82%AA%E3%81%AE%E3%83%A1%E3%83%B3%E3%82%BF%E3%83%AB%E3%83%98%E3%83%AB%E3%82%B9%E3%83%A9%E3%82%B8%E3%82%AA/id1649348148"></iframe>
     </Layout>
   )
 }
 
 export default CateList
+
+export const Head = ({ data,location,pageContext }) => (
+
+   <Seo
+     location={location}
+     title={`${siteMetadata.category.find(item => item.slug === pageContext.cateSlug).name}`}
+     description={`${siteMetadata.category.find(item => item.slug === pageContext.cateSlug).name}の一覧記事です。${siteMetadata.category.find(item => item.slug === pageContext.cateSlug).description}`}
+     type="list-child"
+   />
+)
 
 export const pageQuery = graphql`
   query ($cateSlug: String, $limit: Int!, $skip: Int!) {
