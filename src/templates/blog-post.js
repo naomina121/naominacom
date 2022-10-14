@@ -37,6 +37,7 @@ const BlogPostTemplate = ({ data, location }) => {
   const keyVisual = data.allFile.edges[0].node.childImageSharp
   const { cate, tags } = data.markdownRemark.frontmatter
   const cateName = siteMetadata.category.find(item => item.slug === cate).name
+  const image = post.frontmatter.hero
   const ogpImg = data.allFile.edges[0].node.publicURL
 
   return (
@@ -148,7 +149,7 @@ export default BlogPostTemplate
      location={location}
      title={data.markdownRemark.frontmatter.title}
      description={data.markdownRemark.frontmatter.description || data.markdownRemark.excerpt}
-     ogpImgPath={data.markdownRemark.frontmatter.hero}
+     ogpImgPath={data.allFile.edges[0].node.publicURL}
      type="blog"
    />
 )
