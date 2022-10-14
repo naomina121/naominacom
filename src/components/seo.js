@@ -38,7 +38,7 @@ const Seo = props => {
   const metaDescription = description || site.siteMetadata.description
   const defaultTitle = site.siteMetadata?.title
   const imgPath = `${site.siteMetadata.siteUrl.replace(/\/$/, "")}${
-    img ? img : "/images/ogp.png"
+    ogpImgPath ? `images/${ogpImgPath}` : "/images/ogp.png"
   }`
   const rootPath = `${__PATH_PREFIX__}/`
   const isRootPath = location.pathname === rootPath
@@ -58,7 +58,7 @@ const Seo = props => {
         <meta property="og:type" content={ `${isRootPath ? "website" : "webpage"}`} />
         <meta property="og:site_name" content={defaultTitle} />
         <meta property="og:url" content={imgPath} />
-        <meta property="og:image" content={`${site.siteMetadata?.siteUrl}${imgPath}`} />
+        <meta property="og:image" content={imgPath}/>
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:creator" content={site.siteMetadata?.social?.twitter || ``} />
         <meta name="twitter:image" content={imgPath} />

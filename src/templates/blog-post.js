@@ -37,7 +37,6 @@ const BlogPostTemplate = ({ data, location }) => {
   const keyVisual = data.allFile.edges[0].node.childImageSharp
   const { cate, tags } = data.markdownRemark.frontmatter
   const cateName = siteMetadata.category.find(item => item.slug === cate).name
-
   const ogpImg = data.allFile.edges[0].node.publicURL
 
   return (
@@ -61,6 +60,7 @@ const BlogPostTemplate = ({ data, location }) => {
               background: '#e8e7e7',
             }}
           ><FontAwesomeIcon icon={['fa', 'clock']} /><p>この記事は<b>{words}文字</b>で<b>約{Math.round(minutes * 10) / 10}分</b>で読めます</p>
+
       </div>
         <header>
           <h1>{post.frontmatter.title}</h1>
@@ -203,6 +203,7 @@ export const pageQuery = graphql`
         description
         cate
         tags
+        hero
       }
     }
     previous: markdownRemark(id: { eq: $previousPostId }) {
