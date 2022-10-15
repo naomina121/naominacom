@@ -13,6 +13,7 @@
     "@fortawesome/free-regular-svg-icons": "^6.1.2",
     "@fortawesome/free-solid-svg-icons": "^6.1.2",
     "@fortawesome/react-fontawesome": "^0.2.0",
+    "@material-ui/core": "^4.12.4",
     "@parcel/runtime-browser-hmr": "^2.7.0",
     "@parcel/runtime-react-refresh": "^2.7.0",
     "audit": "^0.0.6",
