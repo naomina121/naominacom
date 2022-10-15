@@ -7,7 +7,7 @@ const Footer = () => {
   return (
     <FooterWrapper>
       <p>
-        <Link to ="/privacy-policy" class="footer_link">プライバシーポリシー</Link>
+        <Link to ="/privacy-policy" className="footer_link">プライバシーポリシー</Link>
       </p>
       <p>
         <small>(c) 2021 {siteMetadata.title}</small>

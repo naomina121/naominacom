@@ -318,10 +318,10 @@ footer.sc-gswNZR p {
 
 .contact form .MuiButton-contained.Mui-disabled{
   background:#ccc;
-    border-radius: 6px;
+  border-radius: 6px;
   border-bottom: solid 4px #333;
 }
-.contact form .MuiButton-contained.Mui-disabled,.MuiButton-fullWidth {
+.contact form .MuiButton-contained.Mui-disabled,.contact form .MuiButton-fullWidth {
   border: none;
   display: block;
   text-decoration: none;
@@ -338,8 +338,8 @@ footer.sc-gswNZR p {
   font-weight: 600;
   border-radius: 6px;
 }
-.MuiButton-fullWidth{
-      background: #d7b63e;
+.contact form .MuiButton-fullWidth{
+  background: #d7b63e;
   border-bottom: solid 4px #a78b28;
 }
 .contact form .MuiButton-contained.Mui-disabled:hover,.MuiButton-fullWidth:hover {
