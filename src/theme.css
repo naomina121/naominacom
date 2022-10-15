@@ -301,6 +301,59 @@ footer.sc-gswNZR p {
   background: #ccc;
 }
 
+/* contact */
+
+.contact form{
+  margin:50px auto;
+}
+
+.contact form div{
+  width:100%;
+  margin-bottom:10px;
+}
+
+.contact form .contact_area label{
+  font-size:14px;
+}
+
+.contact form .MuiButton-contained.Mui-disabled{
+  background:#ccc;
+    border-radius: 6px;
+  border-bottom: solid 4px #333;
+}
+.contact form .MuiButton-contained.Mui-disabled,.MuiButton-fullWidth {
+  border: none;
+  display: block;
+  text-decoration: none;
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0 auto;
+  font-size: 18px;
+  max-width: 240px;
+  padding: 10px 25px;
+  color: #fff;
+  transition: 0.3s ease-in-out;
+  font-weight: 600;
+  border-radius: 6px;
+}
+.MuiButton-fullWidth{
+      background: #d7b63e;
+  border-bottom: solid 4px #a78b28;
+}
+.contact form .MuiButton-contained.Mui-disabled:hover,.MuiButton-fullWidth:hover {
+  border-bottom: solid 2px #a78b28;
+  transform: translateY(3px);
+  box-shadow:none;
+    background: #d7b63e;
+}
+
+.contact form input{
+  margin-bottom:10px;
+  width:100%;
+}
+
 @media screen and (max-width: 1024px) {
   header .container > nav {
     display: none;

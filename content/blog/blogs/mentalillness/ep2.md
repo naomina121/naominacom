@@ -4,7 +4,7 @@ date: 2022-10-15
 modifieddate: 2022-10-15
 pagetype: blog
 hero: thumbnail/mentalillness_ep2.jpg
-description: 訳もなく罪悪感を感じて辛い時、なぜこうした起こるのか私なりに考察してしました
+description: 訳もなく罪悪感を感じて辛い時、なぜこうしたことが起こるのか私なりに考察してしました
 cate: mentalillness
 tags: [罪悪感,罪悪感を覚える理由]
 ---

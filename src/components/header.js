@@ -44,6 +44,7 @@ const Header = ({ location }) => {
                   <li><Link to="/blogs/schizophrenia/">統合失調症</Link></li>
                   <li><Link to="/blogs/mentalillness">その他の精神疾患</Link></li>
                   <li><Link to="/blogs/mentalhealth/">メンタルヘルス</Link></li>
+                  <li><Link to="/contact">お問合わせ</Link></li>
                 </ul>
               </nav>
         </div>
@@ -63,6 +64,9 @@ const Header = ({ location }) => {
             </li>
             <li>
               <Link to="/about/">当サイトについて</Link>
+            </li>
+            <li>
+              <Link to="/contact">お問合わせ</Link>
             </li>
           </ul>
         </nav>
