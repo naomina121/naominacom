@@ -97,7 +97,7 @@ const TagList = ({ pageContext, data, location }) => {
 export default TagList
 export const Head = ({ data,location,pageContext }) => (
       <Seo
-        title={pageContext.tag}
+        title={pageContext.tag + " | ナオのメンタルヘルス"}
         location={location}
         type="tag-list"
         description={`${pageContext.tag}の一覧記事です。`}

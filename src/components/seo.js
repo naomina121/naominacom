@@ -43,12 +43,14 @@ const Seo = props => {
   const rootPath = `${__PATH_PREFIX__}/`
   const isRootPath = location.pathname === rootPath
 
-  let blogUrl = location ? location.href : site.siteMetadata.siteUrl
+  const siteUrl = "https://naomina.com" + location.pathname
+
+  let blogUrl = location.pathname === rootPath ? site.siteMetadata.siteUrl : siteUrl
   // ページネーション削除
   blogUrl = String(blogUrl).replace(/page\/([0-9])+\//, "")
 
     return (
-      <>
+       <>
         <title>{title}</title>
         <meta name="google-site-verification" content="fXFsNigYLZtuUktAMNlINqOOcUs6qjp8Lsu2fyh_xkA" />
         <meta name="description" content={metaDescription} />
@@ -64,8 +66,9 @@ const Seo = props => {
         <meta name="twitter:image" content={imgPath} />
         <meta name="twitter:title" content={title} />
         <meta name="twitter:description" content={metaDescription} />
-+       {children}
-      </>
+       {children}
+       <link rel="canonical" href={blogUrl} />
+       </>
     )
   }
 

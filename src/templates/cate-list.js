@@ -109,7 +109,7 @@ export const Head = ({ data,location,pageContext }) => (
 
    <Seo
      location={location}
-     title={`${siteMetadata.category.find(item => item.slug === pageContext.cateSlug).name}`}
+     title={`${siteMetadata.category.find(item => item.slug === pageContext.cateSlug).name + " | ナオのメンタルヘルス"}`}
      description={`${siteMetadata.category.find(item => item.slug === pageContext.cateSlug).name}の一覧記事です。${siteMetadata.category.find(item => item.slug === pageContext.cateSlug).description}`}
      type="list-child"
    />

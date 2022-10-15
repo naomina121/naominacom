@@ -110,7 +110,7 @@ export default BlogList
   export const Head = ({ data,location }) => (
    <Seo
      location={location}
-     title="記事一覧"
+     title="記事一覧 | ナオのメンタルヘルス"
      description="記事一覧です"
      type="blog-list"
    />

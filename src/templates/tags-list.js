@@ -30,7 +30,7 @@ export default TagsList
 export const Head = ({ data,location }) => (
 
       <Seo
-        title="タグ一覧"
+        title="タグ一覧 | ナオのメンタルヘルス"
         description="全タグ一覧ページです"
         location={location}
       />

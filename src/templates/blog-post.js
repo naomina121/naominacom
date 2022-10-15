@@ -32,7 +32,7 @@ const BlogPostTemplate = ({ data, location }) => {
     const post = data.markdownRemark
     const readingTime = post.fields.readingTime
     const { minutes, words } = readingTime;
-  const siteTitle = data.site.siteMetadata?.title || `Title`
+  const siteTitle = data.site.siteMetadata?.title || `ナオのメンタルヘルス`
   const { previous, next } = data
   const keyVisual = data.allFile.edges[0].node.childImageSharp
   const { cate, tags } = data.markdownRemark.frontmatter
@@ -147,7 +147,7 @@ export default BlogPostTemplate
   export const Head = ({ data,location }) => (
    <Seo
      location={location}
-     title={data.markdownRemark.frontmatter.title}
+     title={data.markdownRemark.frontmatter.title + " | ナオのメンタルヘルス"}
      description={data.markdownRemark.frontmatter.description || data.markdownRemark.excerpt}
      ogpImgPath={data.allFile.edges[0].node.publicURL}
      type="blog"
