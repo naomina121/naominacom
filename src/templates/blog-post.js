@@ -268,10 +268,11 @@ const Dl = styled.dl`
       text-decoration: none;
       border-radius: 2px;
       color: #fff;
-      background: rgb(175 155 16);
+      background: #d7b63e;
+
       padding: 4px 15px;
       &:hover {
-        opacity: 0.5;
+      background: #977f2a;
       }
     }
     & + dd {

@@ -16,7 +16,7 @@ export default Footer
 
 const FooterWrapper = styled.footer`
 text-align:center;
-background:#245b61;
+background:#cd7f6a;
 color:#fff;
 margin:0;
 padding:0;

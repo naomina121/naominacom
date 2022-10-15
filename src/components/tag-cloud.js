@@ -68,7 +68,7 @@ export default TagCloud
 
 const TagCloudList = styled.ul`
   list-style: none;
-  background: #eee;
+  background: #fbf4dd;
   padding: 10px 20px;
   max-width: 700px;
   margin: 0 auto;
@@ -84,10 +84,10 @@ const TagCloudList = styled.ul`
   }
   a {
     line-height: 1;
-    color: rgb(41, 46, 114);
+    color: #ab6856;
     display: block;
     text-decoration: none;
-    border-bottom: dashed 1px rgb(41, 46, 114);
+    border-bottom: dashed 1px #ab6856;
     &:hover {
       color: #bb1100;
       border-bottom-color: #bb1100;
