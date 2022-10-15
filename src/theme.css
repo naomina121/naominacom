@@ -3,6 +3,33 @@ body {
     "メイリオ", "Meiryo", sans-serif;
 }
 
+blockquote:not([class="twitter-tweet"]) {
+  position: relative;
+  margin: 2em 0;
+  padding: 1.2em;
+  font-size: 16px;
+  background: #fbf4dd;
+  border-left: 8px solid #bb9d27;
+  box-shadow: 3px 3px 3px #eee;
+}
+
+blockquote:not([class="twitter-tweet"])::before {
+  position: absolute;
+  top: 15px;
+  left: 20px;
+  content: "“";
+  font-size: 60px;
+  color: #bb9d27;
+  font-family: "ＭＳ Ｐゴシック", sans-serif;
+}
+blockquote:not([class="twitter-tweet"]) p {
+  margin-left: 25px;
+}
+blockquote:not([class="twitter-tweet"]) cite {
+  text-align: right;
+  display: block;
+}
+
 .morePosts {
   border: none;
   text-decoration: none;
