@@ -21,7 +21,7 @@ class ModalWindow extends React.Component {
   render() {
     return (
       <div className="modalWrapper">
-        <button onClick={this.openModal}>検索する</button>
+        <button className='morePosts' onClick={this.openModal}>検索する</button>
         <Modal
           isOpen={this.state.modalIsOpen}
           onRequestClose={this.closeModal}
@@ -30,7 +30,7 @@ class ModalWindow extends React.Component {
           overlayClassName="modalSearchOverlay"
         >
           <Search />
-          <button onClick={this.closeModal}>閉じる</button>
+          <button className='morePosts' onClick={this.closeModal}>閉じる</button>
         </Modal>
       </div>
     );

@@ -84,6 +84,7 @@ const BlogIndex = ({ data, location }) => {
           )
         })}
       </BlogListWrapper>
+      <Link to="/blogs/" className="morePosts">もっと記事を見る</Link>
       <h2>サイト内検索</h2>
       <ModalSeach></ModalSeach>
             <BlogListHeader>

@@ -3,6 +3,29 @@ body {
     "メイリオ", "Meiryo", sans-serif;
 }
 
+.morePosts {
+  border: none;
+  text-decoration: none;
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0 auto;
+  font-size: 18px;
+  max-width: 240px;
+  padding: 10px 25px;
+  color: #fff;
+  transition: 0.3s ease-in-out;
+  font-weight: 600;
+  background: #d7b63e;
+  border-radius: 6px;
+  border-bottom: solid 4px #a78b28;
+}
+.morePosts:hover {
+  border-bottom: solid 2px #a78b28;
+  transform: translateY(3px);
+}
+
 .social-links {
   margin-left: auto;
   max-width: 180px;
@@ -31,7 +54,7 @@ a[rel="next"] {
 }
 header .logo {
   font-size: 25px;
-  margin:0.67em 0;
+  margin: 0.67em 0;
 }
 
 header .logo a {
@@ -120,18 +143,6 @@ main article .articleBody ul li {
 
 /* search */
 
-.modalWrapper button,
-.ReactModal__Overlay button {
-  background: #d7b63e;
-  color: #fff;
-  border: 1px solid #d7b63e;
-  font-size: 20px;
-  border-radius: 4px;
-}
-
-.ReactModal__Overlay button {
-  font-size: 16px;
-}
 .result-inner {
   margin: 20px auto;
 }
@@ -145,9 +156,8 @@ main article .articleBody ul li {
 
 .result-inner__search li {
   list-style: none;
-  background: #f2f1f1;
+  border-bottom: 1px solid #ccc;
   margin-bottom: 10px;
-  border-radius: 2px;
   padding: 10px;
   font-size: 18px;
   margin-left: 0;
@@ -278,7 +288,6 @@ footer.sc-gswNZR p {
 
   .hm button.open {
     z-index: 100;
-    margin: 20px;
   }
 
   .hm nav.open {
@@ -286,7 +295,7 @@ footer.sc-gswNZR p {
     position: fixed;
     height: 102vh;
     width: 100%;
-    background: #235b61;
+    background: #bc9d27;
     left: 0;
     z-index: 99;
     top: -10px;
@@ -304,7 +313,7 @@ footer.sc-gswNZR p {
 
   .hm nav.open ul li {
     list-style: none;
-    font-size: 25px;
+    font-size: 22px;
     margin-bottom: 30px;
   }
 
@@ -314,8 +323,8 @@ footer.sc-gswNZR p {
   }
 
   .hamburger {
-    width: 40px;
-    height: 32px;
+    width: 30px;
+    height: 30px;
     position: relative;
     background: none;
     border: none;

@@ -39,12 +39,11 @@ const Header = ({ location }) => {
       </button>
       <nav id="navigation"  className={active ? "open" : ""} >
                 <ul className='menu__box'>
-                  <li><Link to="/">トップページ</Link></li>
+                  <li><Link to="/about/">当サイトについて</Link></li>
                   <li><Link to="/blogs/depression/">うつ病</Link></li>
                   <li><Link to="/blogs/schizophrenia/">統合失調症</Link></li>
                   <li><Link to="/blogs/mentalillness">その他の精神疾患</Link></li>
                   <li><Link to="/blogs/mentalhealth/">メンタルヘルス</Link></li>
-                  <li><Link to="/about/">当サイトについて</Link></li>
                 </ul>
               </nav>
         </div>

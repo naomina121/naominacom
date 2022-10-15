@@ -80,7 +80,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     })
 
     // 一覧を出力するコードを追加
-    const postsPerPage = 6 //1ページに表示する記事の数
+    const postsPerPage = 12 //1ページに表示する記事の数
 
     const count = blogPosts.length //記事の長さ
     let numPages = Math.ceil(count / postsPerPage) //分割されるページの数
