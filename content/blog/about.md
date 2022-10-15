@@ -2,6 +2,7 @@
 title: 当サイトについて
 description: 当サイトについて、詳しくまとめてみました。
 ---
+
 ![ナオのメンタルヘルス](../../src/images/about.png)
 
 ## どんなサイトなの？
@@ -34,6 +35,12 @@ description: 当サイトについて、詳しくまとめてみました。
 
 好きな言葉は水谷修さんにサインして頂いた「冬来たりば春遠からじ」の名言です。
 
+
+
+[Twitter](https://twitter.com/naominamecom)もやっています。
+
+
+
 ## ブログを始めたきっかけって？
 
 彼氏さんがうつ病を再発してしまったことがきっかけで、
@@ -44,7 +51,13 @@ description: 当サイトについて、詳しくまとめてみました。
 
 ですので、最初はうつ病メインにしようかと思っていました。
 
-しかし、ブログを作るなら、私自身も病気だったため、それについての当事者からの体験や知識なども含めてアウトプットすれば色々な人が役に立てることもあるのではないかという思いで、テーマが拡大した結果、今のようなブログとなりました。
+しかし、せっかくブログを作るなら、
+
+私自身も病気だったため、それについての当事者からの体験や知識なども含めて
+
+アウトプットすれば色々な人が役に立てることもあるのではないかという思いで、
+
+テーマが拡大した結果、今のようなブログとなりました。
 
 ## ブログ・・・のデザイン？
 
@@ -61,5 +74,6 @@ Simple is the best ですっ！ （というなの手抜きですっ）
 めちゃくちゃ緊張しながらお話ししているのが伝わるかと思います笑
 
 私の黒歴史になると思うので、もしよければ聞いてみてくださいね笑
+
 
 <iframe allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write" height="175" style="width:100%;max-width:660px;overflow:hidden;background:transparent;" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="https://embed.podcasts.apple.com/us/podcast/%E5%88%9D%E3%82%81%E3%81%BE%E3%81%97%E3%81%A6-%E3%83%8A%E3%82%AA%E3%81%AE%E3%83%A1%E3%83%B3%E3%82%BF%E3%83%AB%E3%83%98%E3%83%AB%E3%82%B9%E3%83%A9%E3%82%B8%E3%82%AA%E3%82%92%E5%A7%8B%E3%82%81%E3%81%A6%E3%81%84%E3%81%8D%E3%81%BE%E3%81%99/id1649348148?i=1000582294753"></iframe>

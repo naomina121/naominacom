@@ -26,11 +26,12 @@ a[rel="next"] {
   display: none;
 }
 .global-wrapper > header {
-  background: #cd7f6a;
+  background: #bc9d27;
   color: #fff;
 }
 header .logo {
   font-size: 25px;
+  margin:0.67em 0;
 }
 
 header .logo a {
@@ -90,7 +91,7 @@ main h2 {
   border-bottom: 1px solid #ccc;
   text-align: center;
   padding: 10px;
-  color: #977f2a;
+  color: #414141;
 }
 
 main h3 {
@@ -204,7 +205,7 @@ article .tags li {
   margin-bottom: 5px;
 }
 article .tags li a {
-  background: #d7b63e;
+  background: #cd7f6a;
   color: #fff;
   font-size: 14px;
   border-radius: 4px;
@@ -215,13 +216,13 @@ article .tags li a {
 
 article .tags li a:hover {
   color: #ffffff;
-  background: #977f2a;
+  background: #8c422d;
 }
 
 /* footer */
 footer.sc-gswNZR {
   text-align: center;
-  background: #cd7f6a;
+  background: #bc9d27;
   color: #fff;
 }
 
