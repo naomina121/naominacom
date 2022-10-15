@@ -49,6 +49,119 @@ const Seo = props => {
   // ページネーション削除
   blogUrl = String(blogUrl).replace(/page\/([0-9])+\//, "")
 
+// 構造化データの追加
+// 執筆者情報
+  const author = [
+    {
+      "@type": "Person",
+      name: site.siteMetadata.author.name,
+      description: site.siteMetadata.author.summary,
+      url: site.siteMetadata.siteUrl,
+      sameAs: [
+        "https://twitter.com/" + site.siteMetadata.social.twitter,
+      ],
+    },
+  ]
+
+  // 公開する組織など
+  const publisher = {
+    "@type": "Organization",
+    name: site.siteMetadata.title,
+    description: site.siteMetadata.description,
+    logo: {
+      "@type": "ImageObject",
+      url: `${site.siteMetadata.siteUrl}images/logo.png`,
+      width: 72,
+      height: 72,
+    },
+  }
+
+  // JSON+LDの設定
+  let jsonLd = [
+    {
+      "@context": "http://schema.org",
+      "@type": isRootPath ? "webSite" : "webPage",
+      inLanguage: "ja",
+      url: blogUrl,
+      name: title,
+      author,
+      publisher,
+      image: imgPath,
+      description: metaDescription,
+    },
+  ]
+  if (type === "blog") {
+    const article = {
+      "@context": "http://schema.org",
+      "@type": "BlogPosting",
+      url: blogUrl,
+      name: title,
+      headline: title,
+      image: {
+        "@type": "ImageObject",
+        url: imgPath,
+      },
+      description: description,
+      datePublished: date,
+      dateModified: modified,
+      mainEntityOfPage: {
+        "@type": "WebPage",
+        "@id": blogUrl,
+      },
+      author,
+      publisher,
+    }
+    jsonLd = [...jsonLd, article]
+  }
+
+  if (!isRootPath) {
+    let breadCrumbList
+    const home = {
+      "@type": "ListItem",
+      position: 1,
+      name: "ホーム",
+      item: `${site.siteMetadata.siteUrl}`,
+    }
+    const blogList = {
+      "@type": "ListItem",
+      position: 2,
+      name: `記事一覧`,
+      item: `${site.siteMetadata.siteUrl}blogs/`,
+    }
+    if (type === "blog" || type === "cate-list" || type === "tag-list") {
+      breadCrumbList = [
+        home,
+        blogList,
+        {
+          "@type": "ListItem",
+          position: 3,
+          name: title,
+          item: blogUrl,
+        },
+      ]
+    } else if (type === "blog-list") {
+      breadCrumbList = [home, blogList]
+    } else {
+      breadCrumbList = [
+        home,
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: title,
+          item: blogUrl,
+        },
+      ]
+    }
+    jsonLd = [
+      ...jsonLd,
+      {
+        "@context": "http://schema.org",
+        "@type": "BreadcrumbList",
+        itemListElement: breadCrumbList,
+      },
+    ]
+  }
+
     return (
        <>
         <title>{title}</title>
@@ -68,6 +181,9 @@ const Seo = props => {
         <meta name="twitter:description" content={metaDescription} />
        {children}
        <link rel="canonical" href={blogUrl} />
+       <script type="application/ld+json">
+        {JSON.stringify(jsonLd)}
+       </script>
        </>
     )
   }
