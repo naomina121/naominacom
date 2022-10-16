@@ -23,6 +23,15 @@ const Header = ({ location }) => {
   const toggleFunction = () => {
     setActive(!active)
   }
+  const body =document.body
+  if(active){
+    body.classList.add('fixed')
+  }else{
+    body.classList.remove('fixed')
+  }
+
+
+
   return (
     <header>
       <div className="container">
