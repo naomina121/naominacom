@@ -54,7 +54,7 @@ const Contact = ({ data, location }) => {
       >
         <BreadCrumbList parent="root" location={location} title="お問合わせ" />
         <div className="contact">
-          <h1>Contact</h1>
+          <h1>お問い合わせ</h1>
           <p>
             各種お問い合わせはこちらのフォームよりお願いいたします。
             <br></br>

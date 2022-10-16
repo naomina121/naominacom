@@ -75,9 +75,13 @@ const BlogPostTemplate = ({ data, location }) => {
           </div>
 
           <p className="date">
-            更新日
+            作成日
             <time dateTime={post.frontmatter.date}>
               {post.frontmatter.date}
+            </time>
+            更新日
+            <time dateTime={post.frontmatter.modifieddate}>
+              {post.frontmatter.modifieddate}
             </time>
           </p>
         </header>
@@ -104,6 +108,7 @@ const BlogPostTemplate = ({ data, location }) => {
         <BlogEntry
           dangerouslySetInnerHTML={{ __html: post.html }}
         />
+
         <footer>
           <Bio />
         </footer>
@@ -255,6 +260,7 @@ const BlogPostNav = styled.nav`
 `
 const Dl = styled.dl`
   display: flex;
+  flex-wrap:wrap;
   margin: 0;
   dt {
     width: 80px;

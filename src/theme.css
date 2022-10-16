@@ -144,9 +144,17 @@ main h2 {
   color: #414141;
 }
 
+main article section h2{
+  text-align: left;
+}
+
 main h3 {
   border-bottom: 1px solid #ccc;
   padding: 10px;
+}
+
+main h3 a:hover{
+text-decoration: underline;
 }
 
 main article .articleBody h3 {
