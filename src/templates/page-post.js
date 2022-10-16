@@ -39,7 +39,7 @@ export default PagePostTemplate
 
 export const Head = ({ data,location }) => (
    <Seo
-     title={data.site.siteMetadata.title + " | ナオのメンタルヘルス"}
+     title={data.markdownRemark.frontmatter.title + " | ナオのメンタルヘルス"}
      description={data.markdownRemark.frontmatter.description || data.markdownRemark.excerpt}
      location={location}
    />
