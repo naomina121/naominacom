@@ -48,6 +48,7 @@ module.exports = {
     },
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-robots-txt`,
+    `gatsby-plugin-twitter`,
     {
       resolve: `gatsby-plugin-sitemap`,
       options: {
