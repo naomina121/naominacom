@@ -121,7 +121,7 @@ export const pageQuery = graphql`
       }
     }
     allMarkdownRemark(
-      limit: 6
+      limit: 3
       sort: { fields: [frontmatter___date], order: DESC }
       filter: { frontmatter: { pagetype: { eq: "blog" } } }
     ) {
