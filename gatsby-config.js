@@ -200,9 +200,6 @@ module.exports = {
         theme_color: '#BC9D26', // ブラウザツールバーの色
         display: 'minimal-ui',// アプリのスタイル
         icon: `src/images/gatsby-icon.png`,
-        icon_options: {
-          purpose: 'maskable', // maskable iconであることを明示する
-        },
       },
     },
     `gatsby-plugin-offline`,
