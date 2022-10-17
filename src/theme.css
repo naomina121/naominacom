@@ -230,6 +230,9 @@ header .container > nav ul li a:hover {
 .twitter-tweet p {
   font-style: italic;
 }
+main h1{
+  margin:0 0 15px;
+}
 
 main h2 {
   border-bottom: 1px solid #ccc;
@@ -580,6 +583,9 @@ justify-content: flex-end;
   h1{
     font-size:24px;
     line-height:1.5;
+  }
+  main h1{
+    margin:5px 0 25px;
   }
   main h2{
     font-size:20px;
