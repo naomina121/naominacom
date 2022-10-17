@@ -28,6 +28,7 @@ const Seo = props => {
             }
             social {
               twitter
+              podcast
             }
           }
         }
@@ -59,6 +60,7 @@ const Seo = props => {
       url: site.siteMetadata.siteUrl,
       sameAs: [
         "https://twitter.com/" + site.siteMetadata.social.twitter,
+        site.siteMetadata.social.podcast,
       ],
     },
   ]
