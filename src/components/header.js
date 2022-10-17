@@ -32,7 +32,8 @@ const Header = ({ location }) => {
         className={active ? "open hamburger" : "hamburger"}
         controls="navigation"
         label="メニューを開きます"
-        onClick={toggleFunction}>
+        onClick={toggleFunction}
+        aria-label="ハンバーガーメニュー">
         <span className="hamburger_bar"></span>
         <span className="hamburger_bar"></span>
         <span className="hamburger_bar"></span>

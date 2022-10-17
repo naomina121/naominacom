@@ -68,7 +68,7 @@ export default TagCloud
 
 const TagCloudList = styled.ul`
   list-style: none;
-  background: #fbf4dd;
+  background: rgb(249 249 249);
   padding: 10px 20px;
   max-width: 700px;
   margin: 0 auto;
