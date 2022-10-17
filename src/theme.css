@@ -8,6 +8,94 @@ body.fixed {
   overflow: hidden;
 }
 
+/* .depression{
+  color:#38006b;
+}
+.schizophrenia{
+  color:#870000;
+}
+.mentalillness{
+  color:#002171;
+}
+.mentalhealth{
+  color:#003d33;
+} */
+
+.information{
+  display:flex;
+  justify-content: end;
+  flex-direction: column;
+  align-items:flex-end;
+  margin:10px 0 0;
+}
+
+.information li{
+  list-style: none;
+  font-size:14px;
+}
+
+.information li a{
+    font-size: 14px;
+    text-decoration: none;
+    margin-left:5px;
+}
+
+.information li svg{
+  font-size:14px;
+  color:#cd7f6a;
+}
+
+.information li .tag,.information .cate{
+  all:unset;
+}
+
+.information .cate{
+  padding:0 3px;
+  margin:0;
+  font-weight:600;
+}
+
+.information .cate a{
+      color:#123487;
+}
+
+.information .tags ul{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  font-size: 14px;
+  margin-left:5px;
+  padding-left:0;
+}
+.information .tags ul li{
+background: #eae9e9;
+background:#fbf4dd;
+    padding: 0 5px;
+    margin: 5px;
+        display: flex;
+    align-items: center;
+}
+.information .tags ul li a{
+    color: #333;
+    display: inline-block;
+    margin-right: 8px;
+}
+.information .tags ul li a:hover{
+background:none;
+color:#333;
+text-decoration: none;
+cursor: pointer;
+}
+
+.information .tags ul li:last-child a{
+  margin-right: 0;
+}
+
+.information .tags svg{
+  margin-right:5px;
+  font-size:15px;
+}
+
 blockquote:not([class="twitter-tweet"]) {
   position: relative;
   margin: 2em 0;
@@ -59,6 +147,7 @@ blockquote:not([class="twitter-tweet"]) cite {
 }
 
 .social-links {
+  margin-top:-30px;
   margin-left: auto;
   max-width: 180px;
 }
@@ -410,7 +499,7 @@ footer.sc-gswNZR p {
 
   .hm nav.open ul li {
     list-style: none;
-    font-size: 22px;
+    font-size: 20px;
     margin-bottom: 30px;
   }
 
@@ -465,3 +554,38 @@ footer.sc-gswNZR p {
     transform: rotate(-45deg);
   }
 }
+
+@media screen and (max-width: 768px) {
+  .information{
+    flex-direction: column;
+    align-items: flex-end;
+  }
+  .information .tags ul{
+justify-content: flex-end;
+  }
+  .social-links{
+    max-width:120px;
+    margin-top:-20px;
+  }
+  .social-links button{
+    margin-left:5px;
+  }
+  .social-links button svg{
+    width:32px  !important;
+    height:32px !important;
+  }
+  header .logo{
+    font-size:24px;
+  }
+  h1{
+    font-size:24px;
+    line-height:1.5;
+  }
+  main h2{
+    font-size:20px;
+  }
+  main h3{
+    font-size:17px;
+  }
+}
+

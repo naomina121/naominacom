@@ -10,7 +10,11 @@ import TOC from "../components/table-of-content"
 import TagCloud from "../components/tag-cloud"
 import BreadCrumbList from "../components/breadcrumb-list"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-
+import { faRotateRight } from "@fortawesome/free-solid-svg-icons"
+import { faPen } from "@fortawesome/free-solid-svg-icons"
+import { faClock } from "@fortawesome/free-solid-svg-icons"
+import { faFolderOpen } from "@fortawesome/free-solid-svg-icons"
+import { faTag } from "@fortawesome/free-solid-svg-icons"
 
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import RetatedList from "../components/related-list"
@@ -60,10 +64,44 @@ const BlogPostTemplate = ({ data, location }) => {
               marginTop:40,
               background: '#e8e7e7',
             }}
-          ><FontAwesomeIcon icon={['fa', 'clock']} /><p>この記事は<b>{words}文字</b>で<b>約{Math.round(minutes * 10) / 10}分</b>で読めます</p>
+          ><p><FontAwesomeIcon icon={faClock} /> この記事は<b>{words}文字</b>で<b>約{Math.round(minutes * 10) / 10}分</b>で読めます</p>
 
       </div>
         <header>
+          <div className="time">
+          <p className="date">
+            <FontAwesomeIcon icon={faPen} />
+            <time dateTime={post.frontmatter.date}>
+              {post.frontmatter.date}
+            </time>
+            &ensp;作成
+          </p>
+          &emsp;
+          <p className="modifieddate">
+            <FontAwesomeIcon icon={faRotateRight} />
+            <time dateTime={post.frontmatter.modifieddate}>
+              {post.frontmatter.modifieddate}
+            </time>
+            &ensp;更新日
+          </p>
+          </div>
+          <ul className="information">
+              <li className="cate">
+                <FontAwesomeIcon className={cate} icon={faFolderOpen} />
+                <Link to={`/blogs/${cate}/`} className={`category ${cate}`} >{cateName}</Link></li>
+              <li className="tags">
+                <ul>
+                    {tags.map((tag, index) => {
+                    return (
+                    <li key={`tag${index}`}>
+                    <FontAwesomeIcon icon={faTag} />
+                    <Link to={`/blogs/tags/${tag}/`} className={`tag`}>{tag}</Link>
+                    </li>
+                    )
+                    })}
+                  </ul>
+              </li>
+          </ul>
           <h1>{post.frontmatter.title}</h1>
           <Share postPath={post.fields.slug} postNode={post} />
           <div className="keyvisual">
@@ -73,35 +111,8 @@ const BlogPostTemplate = ({ data, location }) => {
               key={post.frontmatter.title}
             />
           </div>
-
-          <p className="date">
-            作成日
-            <time dateTime={post.frontmatter.date}>
-              {post.frontmatter.date}
-            </time>
-            更新日
-            <time dateTime={post.frontmatter.modifieddate}>
-              {post.frontmatter.modifieddate}
-            </time>
-          </p>
         </header>
-        {/* カテゴリー追加 */}
-        <Dl>
-          <dt>カテゴリ</dt>
-          <dd>
-            <Link to={`/blogs/${cate}/`}>{cateName}</Link>
-          </dd>
-        </Dl>
-        <Dl>
-          <dt>タグ</dt>
-          {tags.map((tag, index) => {
-            return (
-              <dd key={`tag${index}`}>
-                <Link to={`/blogs/tags/${tag}/`}>{tag}</Link>
-              </dd>
-            )
-          })}
-        </Dl>
+
         <TOC data={data.markdownRemark.tableOfContents} />
         <BlogEntry className="articleBody">{renderAst(post.htmlAst)}</BlogEntry>
 
@@ -207,6 +218,7 @@ export const pageQuery = graphql`
         title
         date(formatString: "YYYY-MM-DD")
         description
+        modifieddate(formatString: "YYYY-MM-DD")
         cate
         tags
         hero
@@ -234,10 +246,22 @@ export const pageQuery = graphql`
 const Article = styled.article`
   max-width: 750px;
   margin: 0 auto;
-  .date {
-    font-weight: 700;
-    time {
-      margin-left:30px;
+  .time{
+    justify-content: right;
+    display:flex;
+    margin-bottom:-25px;
+    margin-top:30px;
+    color:#6e6d6d;
+    font-size:14px;
+    @media (max-width: 768px) {
+    }
+    @media (max-width: 360px) {
+    }
+    p{
+      time{
+        display:inline-block;
+        padding-left:5px;
+      }
     }
   }
   .keyvisual {
@@ -258,32 +282,4 @@ const BlogPostNav = styled.nav`
     list-style: none;
   }
 `
-const Dl = styled.dl`
-  display: flex;
-  flex-wrap:wrap;
-  margin: 0;
-  dt {
-    width: 80px;
-    font-weight: 700;
-  }
-  dd {
-    font-size: 14px;
-    margin-left: 0;
-    padding-left: 0;
-    a {
-      text-decoration: none;
-      border-radius: 2px;
-      color: #fff;
-      background: #d7b63e;
 
-      padding: 4px 15px;
-      &:hover {
-      background: #977f2a;
-      }
-    }
-    & + dd {
-      margin-left: 15px;
-      margin-bottom: 5px;
-    }
-  }
-`
