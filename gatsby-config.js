@@ -186,20 +186,20 @@ module.exports = {
         },
       },
     },
-    {
-      resolve: `gatsby-plugin-manifest`,
+
+  {
+      resolve: 'gatsby-plugin-manifest',
       options: {
-        name: `ナオのメンタルヘルス`,
-        short_name: `ナオのメンタルヘルス`,
-        start_url: `/`,
-        background_color: `#ffffff`,
-        // This will impact how browsers show your PWA/website
-        // https://css-tricks.com/meta-theme-color-and-trickery/
-        // theme_color: `#663399`,
-        display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        name: 'ナオのメンタルヘルス',
+        short_name: 'ナオのメンタルヘルス',
+        start_url: '/?utm_source=homescreen',
+        background_color: '#BC9D26', // アプリ起動時の背景色
+        theme_color: '#BC9D26', // ブラウザツールバーの色
+        display: 'minimal-ui',// アプリのスタイル
+        icon: `src/images/gatsby-icon.png`,
       },
     },
+    `gatsby-plugin-offline`,
   ],
 }
 
