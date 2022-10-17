@@ -21,7 +21,7 @@ const FooterWrapper = styled.footer`
 text-align:center;
 background:#bc9d27;
 color:#fff;
-margin:0;
+margin:20px 0 0;
 padding:0;
 p {
   margin:0;

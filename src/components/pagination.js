@@ -258,9 +258,9 @@ const PagerWrapper = styled.div`
     span {
       transition: 0.3s;
       display: block;
-      padding: 10px 50px !important;
+      padding: 10px 20px !important;
       @media only screen and (min-width: 768px) {
-        padding: 15px 50px !important;
+        padding: 15px 10px !important;
       }
     }
   }
@@ -272,9 +272,9 @@ const PagerWrapper = styled.div`
     span {
       transition: 0.3s;
       display: block;
-      padding: 10px 50px !important;
+      padding: 10px 20px !important;
       @media only screen and (min-width: 768px) {
-        padding: 15px 50px !important;
+        padding: 15px 10px !important;
       }
     }
   }
