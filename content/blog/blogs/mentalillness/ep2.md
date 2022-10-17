@@ -1,7 +1,7 @@
 ---
 title: 何かが物凄く不安、これって不安障害？
 date: 2022-10-16
-modifieddate: 2022-10-16
+modifieddate: 2022-10-17
 pagetype: blog
 hero: thumbnail/mentalillness_ep2.jpg
 description: 不安障害についての種類と症状についてまとめました。
@@ -79,3 +79,6 @@ tags: [不安,不安障害]
 
 また、各病気に対してはそれぞれ別記事にまとめていこうと思います。
 
+### 追記：2022/10/17 不安障害の種類の記事追加しました。
+
+<card slug="/blogs/mentalillness/ep3/"></card>

@@ -1,7 +1,7 @@
 ---
 title: 統合失調症の誤解あるある
 date: 2022-10-13
-modifieddate: 2022-10-13
+modifieddate: 2022-10-17
 pagetype: blog
 hero: thumbnail/schizophrenia_ep1.jpg
 description: 統合失調症の世間の誤解について、当事者からみて事実と異なっていることなどを解説していきます。
@@ -23,7 +23,7 @@ tags: [あるある,疑問,誤解]
 
 まずはこちらから！
 
-<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">通行人にめちゃめちゃ見られてる気がするけど統失かな……って思ったら普通にチャック全開だった。</p>&mdash; キマってるときのノート (@lad_tripnote) <a href="https://twitter.com/lad_tripnote/status/1580095962026217473?ref_src=twsrc%5Etfw">October 12, 2022</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">通行人にめちゃめちゃ見られてる気がするけど統失かな……って思ったら普通にチャック全開だった。</p>&mdash; キマってるときのノート (@lad_tripnote) <a href="https://twitter.com/lad_tripnote/status/1580095962026217473?ref_src=twsrc%5Etfw">October 12, 2022</a></blockquote>
 
 ただの危ない人です・・・
 
@@ -47,7 +47,7 @@ tags: [あるある,疑問,誤解]
 
 ## 統合失調症になれば休ませてくれるから楽になるのか
 
-<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">精神ぐちゃぐちゃになりたい。<br>そして鬱になって統失にでもなって、分かりやすく脳みそおかしくなれば、みんなあたしのつらさ分かってくれるかな、<br>休ませてくれるかな、謝ってくれるかな。<br>もう手遅れだって気づいて泣いてくれるかな、一生かけて謝罪してくれるかな。</p>&mdash; なきべそ (@pien__Ux_xU) <a href="https://twitter.com/pien__Ux_xU/status/1579796233853358080?ref_src=twsrc%5Etfw">October 11, 2022</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">精神ぐちゃぐちゃになりたい。<br>そして鬱になって統失にでもなって、分かりやすく脳みそおかしくなれば、みんなあたしのつらさ分かってくれるかな、<br>休ませてくれるかな、謝ってくれるかな。<br>もう手遅れだって気づいて泣いてくれるかな、一生かけて謝罪してくれるかな。</p>&mdash; なきべそ (@pien__Ux_xU) <a href="https://twitter.com/pien__Ux_xU/status/1579796233853358080?ref_src=twsrc%5Etfw">October 11, 2022</a></blockquote>
 
 精神疾患って、たとえばうつ病にかかると薬を飲まないと再発するし、本人は地獄の苦しみを抱えながら生きているので、状態が悪くなれば自殺なんて普通にしてしまいます。
 
@@ -59,7 +59,7 @@ tags: [あるある,疑問,誤解]
 
 ## 統合失調症は病院に行かない方が良いのか
 
-<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">現状、被害妄想が止まらず周囲を疲弊させ続ける人に対して、「統失だから病院いけ」ってなってるのがマズい。行ったらオシマイだよ。たぶんだけど、ずっとお菓子食べて甘いジュースが好き、食事もパンやパスタなどの麺類、丼ものが多いのでは。「肉食え」「ナイアシン飲め」に変われば解決するのに。。</p>&mdash; Yusuke🌏レイキヒーラー☯ (@euphoria_healer) <a href="https://twitter.com/euphoria_healer/status/1579259386635374592?ref_src=twsrc%5Etfw">October 9, 2022</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">現状、被害妄想が止まらず周囲を疲弊させ続ける人に対して、「統失だから病院いけ」ってなってるのがマズい。行ったらオシマイだよ。たぶんだけど、ずっとお菓子食べて甘いジュースが好き、食事もパンやパスタなどの麺類、丼ものが多いのでは。「肉食え」「ナイアシン飲め」に変われば解決するのに。。</p>&mdash; Yusuke🌏レイキヒーラー☯ (@euphoria_healer) <a href="https://twitter.com/euphoria_healer/status/1579259386635374592?ref_src=twsrc%5Etfw">October 9, 2022</a></blockquote>
 
 統合失調症の人は薬物治療しか寛解する術はありません。
 なので病院に行くことが重要です。
@@ -67,9 +67,12 @@ tags: [あるある,疑問,誤解]
 
 ## まとめ
 
-需要があればこのシリーズ続けていこうと思います。
-少しは誤解解けましたでしょうか？
 ここまで読んでくださってありがとうございます！
+
+### 追記：2022/10/17 続編の記事追記しましたので、併せてご覧くださいませ
+
+<card slug="/blogs/schizophrenia/ep3/"></card>
+
 
 
 

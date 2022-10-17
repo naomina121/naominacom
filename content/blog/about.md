@@ -69,11 +69,4 @@ Simple is the best ですっ！ （というなの手抜きですっ）
 
 実はナオのメンタルヘルスという、心の病気や健康に関してをテーマとしたポッドキャストもしています。
 
-こちらは記念すべき初回放送です。
-
-めちゃくちゃ緊張しながらお話ししているのが伝わるかと思います笑
-
-私の黒歴史になると思うので、もしよければ聞いてみてくださいね笑
-
-
-<iframe allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write" height="175" style="width:100%;max-width:660px;overflow:hidden;background:transparent;" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="https://embed.podcasts.apple.com/us/podcast/%E5%88%9D%E3%82%81%E3%81%BE%E3%81%97%E3%81%A6-%E3%83%8A%E3%82%AA%E3%81%AE%E3%83%A1%E3%83%B3%E3%82%BF%E3%83%AB%E3%83%98%E3%83%AB%E3%82%B9%E3%83%A9%E3%82%B8%E3%82%AA%E3%82%92%E5%A7%8B%E3%82%81%E3%81%A6%E3%81%84%E3%81%8D%E3%81%BE%E3%81%99/id1649348148?i=1000582294753"></iframe>
+<iframe allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write" width="100%" height="450" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="https://embed.podcasts.apple.com/us/podcast/%E3%83%8A%E3%82%AA%E3%81%AE%E3%83%A1%E3%83%B3%E3%82%BF%E3%83%AB%E3%83%98%E3%83%AB%E3%82%B9%E3%83%A9%E3%82%B8%E3%82%AA/id1649348148"></iframe>
