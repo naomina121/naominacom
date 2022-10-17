@@ -5,7 +5,7 @@ module.exports = {
     name: `ナオ`,
     summary: `統合失調症。再発防止と病気の理解のためメンタルヘルスについて学んでいます`,
   },
-  description: `心の健康や心の病の正しい知識を普及するための目的としたブログ記事`,
+  description: `心の健康や心の病の正しい知識を普及するための目的としたサイト`,
   siteUrl: `https://naomina.com/`,
   social: {
     twitter: `naominamecom`,
@@ -194,11 +194,15 @@ module.exports = {
       options: {
         name: 'ナオのメンタルヘルス',
         short_name: 'ナオのメンタルヘルス',
-        start_url: '/?utm_source=homescreen',
+        start_url: '/',
+        description: '心の健康や心の病の正しい知識を普及するための目的としたサイト',
         background_color: '#BC9D26', // アプリ起動時の背景色
         theme_color: '#BC9D26', // ブラウザツールバーの色
         display: 'minimal-ui',// アプリのスタイル
         icon: `src/images/gatsby-icon.png`,
+        icon_options: {
+          purpose: 'maskable', // maskable iconであることを明示する
+        },
       },
     },
     `gatsby-plugin-offline`,
