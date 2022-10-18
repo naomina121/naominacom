@@ -126,6 +126,7 @@ const RelatedList = styled.div`
   }
   h3 {
     font-size: 1.7rem;
+    margin-top:0px;
   }
   @media screen and (min-width: 768px) {
     display: flex;

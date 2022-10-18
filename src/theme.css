@@ -51,7 +51,7 @@ body.fixed {
 
 .information .cate{
   padding:0 3px;
-  margin:0;
+  margin:5px 0;
   font-weight:600;
 }
 
@@ -71,7 +71,7 @@ body.fixed {
 background: #eae9e9;
 background:#fbf4dd;
     padding: 0 5px;
-    margin: 5px;
+    margin: 5px 8px;
         display: flex;
     align-items: center;
 }

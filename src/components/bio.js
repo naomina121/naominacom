@@ -73,7 +73,7 @@ const Bio = () => {
                 className="podcast"
               >
                 <FontAwesomeIcon icon={faPodcast} />
-                ApplePodCast
+                PodCast
               </a>
             </li>
           </Sns>
