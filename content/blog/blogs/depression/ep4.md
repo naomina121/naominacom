@@ -6,7 +6,7 @@ pagetype: blog
 hero: thumbnail/depression_ep4.jpg
 description: 前回に引き続き、身近な人がうつ病になったらどうするのかを解説していきます
 cate: depression
-tags: [恋人や家族,もし恋人や家族がうつ病になったら]
+tags: [知識,もし恋人や家族がうつ病になったら]
 ---
 
 この記事を読む前に、以前執筆しましたこちらの記事も読んでない方は合わせてご覧ください。

@@ -6,7 +6,7 @@ pagetype: blog
 hero: thumbnail/mentalillness_ep3.jpg
 description: 不安障害の種類を調べ、紹介しています。
 cate: mentalillness
-tags: [不安,不安障害]
+tags: [知識,不安障害]
 ---
 
 

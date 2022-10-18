@@ -6,7 +6,7 @@ pagetype: blog
 hero: thumbnail/depression_ep2.jpg
 description: 身近なうつ病になったら私たちには何ができるのでしょうか。できることを考えてみました。
 cate: depression
-tags: [恋人や家族,もし恋人や家族がうつ病になったら]
+tags: [知識,もし恋人や家族がうつ病になったら]
 ---
 
 うつ病は、身近な病気のこともあり、いつ誰が罹るか分かりません。

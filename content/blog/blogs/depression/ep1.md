@@ -6,7 +6,7 @@ pagetype: blog
 hero: thumbnail/depression_ep1.jpg
 description: うつ病になってしまう理由、気になりますよね。今回はそんな疑問を解決すべく調査してみました。
 cate: depression
-tags: [きっかけ,疑問]
+tags: [知識]
 ---
 
 うつ病はよく心の風邪というほど、日本では、100人に6人が発症してしまう病気です。

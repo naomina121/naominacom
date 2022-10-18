@@ -6,7 +6,7 @@ pagetype: blog
 hero: thumbnail/schizophrenia_ep1.jpg
 description: 統合失調症の世間の誤解について、当事者からみて事実と異なっていることなどを解説していきます。
 cate: schizophrenia
-tags: [あるある,疑問,誤解]
+tags: [知識]
 ---
 
 今回は、統合失調症の私が、誤解を解いて正しい知識を普及していこうという企画です。

@@ -6,7 +6,7 @@ pagetype: blog
 hero: thumbnail/mentalillness_ep1.jpg
 description: うつ病やパニック障害などを併発したりする原因の一つとして自律神経失調症がきっかけになることも。
 cate: mentalillness
-tags: [自律神経失調症]
+tags: [知識,自律神経失調症]
 ---
 
 「自律神経を整えることは、重要と聞くけど、そもそも自律神経って何？」

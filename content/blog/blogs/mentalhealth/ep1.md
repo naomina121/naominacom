@@ -6,7 +6,7 @@ pagetype: blog
 hero: thumbnail/mentalhealth_ep1.jpg
 description: 日頃の健康について私自身が意識していることをまとめています。
 cate: mentalhealth
-tags: [心の健康,ウォーキング,ナオの健康法,簡単]
+tags: [知識,ナオの健康法]
 ---
 
 今回は私、ナオが健康のために気を配っていることについてお話ししていきたいと思います。

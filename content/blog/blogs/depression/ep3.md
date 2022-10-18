@@ -6,7 +6,7 @@ pagetype: blog
 hero: thumbnail/depression_ep3.jpg
 description: 気になるうつ病の自殺率について解説していきます。
 cate: depression
-tags: [危険,疑問,自殺]
+tags: [知識]
 ---
 
 ## うつ病の自殺率とは

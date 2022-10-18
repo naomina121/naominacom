@@ -6,7 +6,7 @@ pagetype: blog
 hero: thumbnail/schizophrenia_ep2.jpg
 description: 統合失調症当事者が、病気になる前の前兆や再発のサインだったことをまとめてみました。
 cate: schizophrenia
-tags: [前兆,再発]
+tags: [知識,前兆や再発のサイン]
 ---
 
 今回は、私が統合失調症になる前の前兆や再発のサインだったものをまとめてみます。

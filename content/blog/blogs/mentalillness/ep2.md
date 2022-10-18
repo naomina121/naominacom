@@ -6,7 +6,7 @@ pagetype: blog
 hero: thumbnail/mentalillness_ep2.jpg
 description: 不安障害についての種類と症状についてまとめました。
 cate: mentalillness
-tags: [不安,不安障害]
+tags: [知識,不安障害]
 ---
 
 こんにちは、ナオです。

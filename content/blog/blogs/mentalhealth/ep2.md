@@ -6,7 +6,7 @@ pagetype: blog
 hero: thumbnail/mentalhealth_ep2.jpg
 description: 誰にでもある不安について調査してみました。
 cate: mentalhealth
-tags: [不安,不安解消法]
+tags: [知識,不安解消法]
 ---
 
 今回は誰しもが抱える「不安」について、その正体を迫っていきたいと思います。

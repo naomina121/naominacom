@@ -6,7 +6,7 @@ pagetype: blog
 hero: thumbnail/schizophrenia_ep3.jpg
 description: 統合失調症患者誤解あるあるについて再度まとめてみました。
 cate: schizophrenia
-tags: [あるある,疑問,誤解]
+tags: [知識]
 ---
 
 こんにちは、ナオです。

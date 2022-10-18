@@ -6,7 +6,7 @@ pagetype: blog
 hero: thumbnail/mentalhealth_ep3.jpg
 description: 訳もなく罪悪感を感じて辛い時、なぜこうしたことが起こるのか私なりに考察してしました。
 cate: mentalhealth
-tags: [罪悪感,罪悪感を覚える理由]
+tags: [知識]
 ---
 
 こんにちは、ナオです。
