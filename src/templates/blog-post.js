@@ -7,7 +7,7 @@ import Layout from "../components/layout"
 import Seo from "../components/seo"
 import Share from '../components/share';
 import TOC from "../components/table-of-content"
-import TagCloud from "../components/tag-cloud"
+//import TagCloud from "../components/tag-cloud"
 import BreadCrumbList from "../components/breadcrumb-list"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faRotateRight } from "@fortawesome/free-solid-svg-icons"
@@ -149,11 +149,11 @@ const BlogPostTemplate = ({ data, location }) => {
       ></RetatedList>
 <h2>サイト内検索</h2>
       <ModalSeach></ModalSeach>
-      <BlogListHeader>
+      {/* <BlogListHeader>
         <h2>タグクラウド</h2>
         <p>現在投稿中のジャンルの記事たちです</p>
       </BlogListHeader>
-      <TagCloud></TagCloud>
+      <TagCloud></TagCloud> */}
     </Layout>
   )
 }

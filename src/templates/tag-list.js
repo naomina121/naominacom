@@ -1,6 +1,6 @@
 import * as React from "react"
 import { Link, graphql } from "gatsby"
-import TagCloud from "../components/tag-cloud"
+//import TagCloud from "../components/tag-cloud"
 import ModalSeach from "../components/modal-search"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
@@ -83,11 +83,11 @@ const TagList = ({ pageContext, data, location }) => {
       <Pagination num={page} current={current} type={`tags/${tag}`} ></Pagination>
       <h2>サイト内検索</h2>
       <ModalSeach></ModalSeach>
-            <BlogListHeader>
+            {/* <BlogListHeader>
         <h2>タグクラウド</h2>
         <p>現在投稿中のジャンルの記事たちです</p>
       </BlogListHeader>
-      <TagCloud></TagCloud>
+      <TagCloud></TagCloud> */}
     </Layout>
   )
 }

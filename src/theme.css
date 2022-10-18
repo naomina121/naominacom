@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap');
 body {
   font-family: "游ゴシック体", "YuGothic", "游ゴシック", "Yu Gothic", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro",
     "メイリオ", "Meiryo", sans-serif;
@@ -6,6 +8,50 @@ body {
 body.fixed {
   height: 100%;
   overflow: hidden;
+}
+
+.link_name{
+  color:#123487;
+  font-size:20px;
+  text-decoration: none;
+  margin:5px;
+  display:inline-block;
+  padding:3px;
+}
+
+.link_name:hover{
+  background:#fff8df;
+  text-decoration: underline;
+}
+
+.green{
+  color:rgb(0 79 0);
+  font-weight:600;
+}
+
+.red{
+  color:rgb(246, 67, 67);
+}
+
+.big{
+  font-size:1.5em;
+}
+
+.orange{
+  color:#f78a37;
+}
+
+.tyuui{
+  text-decoration: underline;
+  font-weight:600;
+}
+
+.about{
+  max-width:640px;
+  width:100%;
+  height:auto;
+  margin:0 auto;
+  display: block;
 }
 
 /* .depression{
@@ -130,7 +176,7 @@ blockquote:not([class="twitter-tweet"]) cite {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  margin: 0 auto;
+  margin:0 auto;
   font-size: 18px;
   max-width: 240px;
   padding: 10px 25px;
@@ -176,6 +222,8 @@ a[rel="next"] {
 header .logo {
   font-size: 25px;
   margin: 0.67em 0;
+  font-family: 'Playfair Display', serif;
+
 }
 
 header .logo a {
@@ -185,7 +233,7 @@ header .logo a {
 }
 
 header .logo a:hover {
-  color: #eaf371;
+  color: #3b2c87;
 }
 
 header .container > nav ul li a {
@@ -211,13 +259,56 @@ header .container > nav ul li a {
   text-decoration: none;
   color: #fff;
   font-weight: bold;
+    font-family: 'Playfair Display', serif;
 }
 
 header .container > nav ul li a:hover {
-  color: #eaf371;
+  color: #3b2c87;
 }
 
 /* main */
+
+.topWrapper{
+  display: flex;
+  max-width:1180px;
+  width:100%;
+}
+.topWrapper main{
+  width:100%;
+}
+
+.topWrapper main h3{
+  background:#f5f0dd;
+  border:none;
+  padding:15px;
+  border-radius:6px;
+}
+
+.topWrapper main h4{
+border-left: 6px solid #a78b29;
+    padding: 10px;
+    background: #f9f9f9;
+}
+
+.topWrapper aside{
+  max-width:300px;
+  width:100%;
+  margin-left:20px;
+}
+
+aside{
+  margin-top:10px;
+}
+
+aside .aside_title{
+  border-bottom:none;
+  font-weight:500;
+  font-size:20px;
+  border-left:6px solid #bb9d27;
+  background: #f5f0dd;
+  box-shadow:2px 2px 5px #ccc;
+}
+
 
 blockquote.twitter-tweet {
   display: inline-block;
@@ -486,6 +577,7 @@ footer.sc-gswNZR p {
   header .container > nav {
     display: none;
   }
+
   .hm {
     display: block;
   }
@@ -495,7 +587,7 @@ footer.sc-gswNZR p {
   }
 
   .hm button.open {
-    z-index: 100;
+    z-index: 10000;
   }
 
   .hm nav.open {
@@ -505,7 +597,7 @@ footer.sc-gswNZR p {
     width: 100%;
     background: #bc9d27;
     left: 0;
-    z-index: 99;
+    z-index: 9999;
     top: -10px;
   }
 
@@ -582,6 +674,24 @@ footer.sc-gswNZR p {
 }
 
 @media screen and (max-width: 768px) {
+  .morePosts{
+    margin:30px auto 30px;
+  }
+   .topWrapper{
+    flex-direction: column;
+    max-width:100%;
+    width:100%;
+  }
+
+  .topWrapper aside{
+    max-width:100%;
+    margin-left:0;
+    width:100%;
+  }
+  .topWrapper .blog-list-style__BlogListWrapper-cvkDKG > li{
+    max-width:100% !important;
+
+  }
   .information{
     flex-direction: column;
     align-items: flex-end;

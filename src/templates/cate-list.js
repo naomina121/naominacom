@@ -5,7 +5,7 @@ import Layout from "../components/layout"
 import Seo from "../components/seo"
 import BreadCrumbList from "../components/breadcrumb-list"
 import { BlogListWrapper, BlogListHeader } from "../style/blog-list-style"
-import TagCloud from "../components/tag-cloud"
+//import TagCloud from "../components/tag-cloud"
 import ModalSeach from "../components/modal-search"
 //画像読み込み
 import Img from "../components/img"
@@ -92,11 +92,11 @@ const CateList = ({ pageContext, data, location }) => {
       <Pagination num={page} current={current} type={cateSlug} ></Pagination>
       <h2>サイト内検索</h2>
       <ModalSeach></ModalSeach>
-            <BlogListHeader>
+            {/* <BlogListHeader>
         <h2>タグクラウド</h2>
         <p>現在投稿中のジャンルの記事たちです</p>
       </BlogListHeader>
-      <TagCloud></TagCloud>
+      <TagCloud></TagCloud> */}
     </Layout>
   )
 }

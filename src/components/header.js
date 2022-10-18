@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from "gatsby"
 import { siteMetadata } from "../../gatsby-config"
-// import styled from "styled-components"
+//import styled from "styled-components"
 
 const Header = ({ location }) => {
   const [active, setActive] = useState(false);
@@ -40,7 +40,7 @@ const Header = ({ location }) => {
       </button>
       <nav id="navigation"  className={active ? "open" : ""} >
                 <ul className='menu__box'>
-                  <li><Link to="/about/">当サイトについて</Link></li>
+                  <li><Link to="/about/">ナオについて</Link></li>
                   <li><Link to="/blogs/depression/">うつ病</Link></li>
                   <li><Link to="/blogs/schizophrenia/">統合失調症</Link></li>
                   <li><Link to="/blogs/mentalillness">その他の精神疾患</Link></li>
@@ -64,7 +64,7 @@ const Header = ({ location }) => {
               <Link to="/blogs/mentalhealth/">メンタルヘルス</Link>
             </li>
             <li>
-              <Link to="/about/">当サイトについて</Link>
+              <Link to="/about/">ナオについて</Link>
             </li>
             <li>
               <Link to="/contact">お問合わせ</Link>
