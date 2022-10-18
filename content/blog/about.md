@@ -93,7 +93,7 @@ Simple is the best ですっ！ （というなの手抜きですっ）
 ## Twitter
 
 
-私も人間ですから<a href='https://twitter.com/naominamecom' class='link_name' target='_blank'>Twitter</a>で呟いてたりします。
+実は、<a href='https://twitter.com/naominamecom' class='link_name' target='_blank'>Twitter</a>で呟いてたりします。
 
 ## ポッドキャスト
 
