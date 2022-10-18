@@ -2,7 +2,7 @@ import * as React from "react"
 import { Link, graphql } from "gatsby"
 //import TagCloud from "../components/tag-cloud"
 //import { GatsbyImage, getImage } from "gatsby-plugin-image"
-
+import TOC from "../components/table-of-content"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import BreadCrumbList from "../components/breadcrumb-list"
@@ -12,7 +12,7 @@ import styled from "styled-components"
 const PagePostTemplate = ({ data, location }) => {
   const post = data.markdownRemark
   const siteTitle = data.site.siteMetadata?.title || `Title`
-
+  const image = data.site.siteMetadata?.title || `Title`
   return (
     <Layout location={location} title={siteTitle}>
       <Article
@@ -26,7 +26,9 @@ const PagePostTemplate = ({ data, location }) => {
         />
         <header>
           <h1>{post.frontmatter.title}</h1>
+          <TOC data={data.markdownRemark.tableOfContents} />
         </header>
+
         <BlogEntry
           dangerouslySetInnerHTML={{ __html: post.html }}
         />
@@ -89,6 +91,12 @@ const Article = styled.article`
 `
 const BlogEntry = styled.section`
   margin: 15px 0 30px;
+  h3{
+      background:#f5f0dd;
+  border:none;
+  padding:15px;
+  border-radius:6px;
+  }
   ul{
 background: #fffaeb;
     padding: 30px;

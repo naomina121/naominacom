@@ -20,7 +20,7 @@ const FirstView = () => {
         <p className="title">
           Welcome To Nao's Site.
         </p>
-        <p className="dp">当サイトは、私、ナオが心の病や心の病気について、当事者が思ったことを突っ込んだり、勉強になったことを知識として発信していくサイトです。</p>
+        <p className="dp">当サイトは、私、ナオが心の病や心の病気について、知識を蓄えつつ勉強になったことや私自身が思ったことなど突っ込んで記事を発信していくサイトです。</p>
         <Link to='/about/' className="btn">ナオについてはこちら</Link>
       </div>
     </Wrapper>

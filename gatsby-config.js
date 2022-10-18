@@ -5,7 +5,7 @@ module.exports = {
     name: `ナオ`,
     summary: `統合失調症。再発防止と病気の理解のためメンタルヘルスについて学んでいます`,
   },
-  description: `心の健康や心の病の正しい知識を普及するための目的としたサイト`,
+  description: `当サイトは、私、ナオが心の病や心の病気について、知識を蓄えつつ勉強になったことや私自身が思ったことなど突っ込んで記事を発信していくサイトです。`,
   siteUrl: `https://naomina.com/`,
   social: {
     twitter: `naominamecom`,
