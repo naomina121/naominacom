@@ -1,7 +1,7 @@
 ---
 title: 統合失調症で前兆や再発サインは
 date: 2022-10-16
-modifieddate: 2022-10-16
+modifieddate: 2022-10-18
 pagetype: blog
 hero: thumbnail/schizophrenia_ep2.jpg
 description: 統合失調症当事者が、病気になる前の前兆や再発のサインだったことをまとめてみました。
@@ -23,11 +23,11 @@ tags: [前兆,再発]
 
 ### 音声配信 私が初めて統合失調症で入院するまでの経緯PART1
 
-<iframe allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write" frameborder="0" height="175" style="width:100%;max-width:660px;overflow:hidden;background:transparent;" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="https://embed.podcasts.apple.com/us/podcast/%E7%A7%81%E3%81%8C%E5%88%9D%E3%82%81%E3%81%A6%E7%B5%B1%E5%90%88%E5%A4%B1%E8%AA%BF%E7%97%87%E3%81%A7%E5%85%A5%E9%99%A2%E3%81%99%E3%82%8B%E3%81%BE%E3%81%A7%E3%81%AE%E7%B5%8C%E7%B7%AF-part1/id1649348148?i=1000582530633"></iframe>
+<iframe allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write" frameborder="0" height="175" style="width:100%;max-width:660px;overflow:hidden;background:transparent;" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="https://embed.podcasts.apple.com/jp/podcast/%E7%A7%81%E3%81%8C%E5%88%9D%E3%82%81%E3%81%A6%E7%B5%B1%E5%90%88%E5%A4%B1%E8%AA%BF%E7%97%87%E3%81%A7%E5%85%A5%E9%99%A2%E3%81%99%E3%82%8B%E3%81%BE%E3%81%A7%E3%81%AE%E7%B5%8C%E7%B7%AF-part1/id1649348148?i=1000582530633"></iframe>
 
 ### 音声配信 私が初めて統合失調症で入院するまでの経緯PART2
 
-<iframe allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write" frameborder="0" height="175" style="width:100%;max-width:660px;overflow:hidden;background:transparent;" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="https://embed.podcasts.apple.com/us/podcast/%E7%A7%81%E3%81%8C%E5%88%9D%E3%82%81%E3%81%A6%E7%B5%B1%E5%90%88%E5%A4%B1%E8%AA%BF%E7%97%87%E3%81%A7%E5%85%A5%E9%99%A2%E3%81%99%E3%82%8B%E3%81%BE%E3%81%A7%E3%81%AE%E7%B5%8C%E7%B7%AF-part2/id1649348148?i=1000582530553"></iframe>
+<iframe allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write" frameborder="0" height="175" style="width:100%;max-width:660px;overflow:hidden;background:transparent;" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="https://embed.podcasts.apple.com/jp/podcast/%E7%A7%81%E3%81%8C%E5%88%9D%E3%82%81%E3%81%A6%E7%B5%B1%E5%90%88%E5%A4%B1%E8%AA%BF%E7%97%87%E3%81%A7%E5%85%A5%E9%99%A2%E3%81%99%E3%82%8B%E3%81%BE%E3%81%A7%E3%81%AE%E7%B5%8C%E7%B7%AF-part2/id1649348148?i=1000582530553"></iframe>
 
 ### 統合失調症の前兆
 

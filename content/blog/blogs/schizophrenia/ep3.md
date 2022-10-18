@@ -1,7 +1,7 @@
 ---
 title: 統合失調症誤解あるあるPART2
 date: 2022-10-17
-modifieddate: 2022-10-17
+modifieddate: 2022-10-18
 pagetype: blog
 hero: thumbnail/schizophrenia_ep3.jpg
 description: 統合失調症患者誤解あるあるについて再度まとめてみました。
@@ -38,7 +38,7 @@ tags: [あるある,疑問,誤解]
 
 恋愛妄想について語ったものがあるのでご興味のがある方はこちらから。
 
-<iframe allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write" frameborder="0" height="175" style="width:100%;max-width:660px;overflow:hidden;background:transparent;" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="https://embed.podcasts.apple.com/us/podcast/%E6%81%8B%E6%84%9B%E5%A6%84%E6%83%B3%E3%81%AB%E5%8F%96%E3%82%8A%E6%86%91%E3%81%8B%E3%82%8C%E3%81%9F%E7%B5%B1%E5%90%88%E5%A4%B1%E8%AA%BF%E7%97%87%E6%82%A3%E8%80%85%E3%81%AF%E3%81%A9%E3%81%86%E3%81%AA%E3%82%8B%E3%81%AE%E3%81%8B/id1649348148?i=1000582782205"></iframe>
+<iframe allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write" frameborder="0" height="175" style="width:100%;max-width:660px;overflow:hidden;background:transparent;" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="https://embed.podcasts.apple.com/jp/podcast/%E6%81%8B%E6%84%9B%E5%A6%84%E6%83%B3%E3%81%AB%E5%8F%96%E3%82%8A%E6%86%91%E3%81%8B%E3%82%8C%E3%81%9F%E7%B5%B1%E5%90%88%E5%A4%B1%E8%AA%BF%E7%97%87%E6%82%A3%E8%80%85%E3%81%AF%E3%81%A9%E3%81%86%E3%81%AA%E3%82%8B%E3%81%AE%E3%81%8B/id1649348148?i=1000582782205"></iframe>
 
 
 <blockquote class="twitter-tweet"><p lang="ja" dir="ltr">職場でみられる <a href="https://twitter.com/hashtag/%E7%B2%BE%E7%A5%9E%E7%96%BE%E6%82%A3?src=hash&amp;ref_src=twsrc%5Etfw">#精神疾患</a> (3/8)<a href="https://twitter.com/hashtag/%E7%B5%B1%E5%90%88%E5%A4%B1%E8%AA%BF%E7%97%87?src=hash&amp;ref_src=twsrc%5Etfw">#統合失調症</a> <a href="https://twitter.com/hashtag/%E5%B9%BB%E8%A6%9A?src=hash&amp;ref_src=twsrc%5Etfw">#幻覚</a> や <a href="https://twitter.com/hashtag/%E5%A6%84%E6%83%B3?src=hash&amp;ref_src=twsrc%5Etfw">#妄想</a> に基づき、他人には理解できない言動を示したり、<a href="https://twitter.com/hashtag/%E6%84%8F%E6%AC%B2%E3%81%AE%E4%BD%8E%E4%B8%8B?src=hash&amp;ref_src=twsrc%5Etfw">#意欲の低下</a> や <a href="https://twitter.com/hashtag/%E9%96%89%E3%81%98%E3%81%93%E3%82%82%E3%82%8A?src=hash&amp;ref_src=twsrc%5Etfw">#閉じこもり</a> など活動のエネルギーがなくなったような状態になることがあります😑ほとんどの統合失調症は <a href="https://twitter.com/hashtag/%E6%80%9D%E6%98%A5%E6%9C%9F?src=hash&amp;ref_src=twsrc%5Etfw">#思春期</a> から <a href="https://twitter.com/hashtag/%E9%9D%92%E5%B9%B4%E6%9C%9F?src=hash&amp;ref_src=twsrc%5Etfw">#青年期</a> に発病します🌱 <a href="https://t.co/nGHCFAWc3P">pic.twitter.com/nGHCFAWc3P</a></p>&mdash; 株式会社フィスメック (@fismec) <a href="https://twitter.com/fismec/status/1580740172102049793?ref_src=twsrc%5Etfw">October 14, 2022</a></blockquote>
