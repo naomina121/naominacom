@@ -9,7 +9,7 @@ module.exports = {
   siteUrl: `https://naomina.com/`,
   social: {
     twitter: `naominamecom`,
-    podcast: `https://podcasts.apple.com/us/podcast/%E3%83%8A%E3%82%AA%E3%81%AE%E3%83%A1%E3%83%B3%E3%82%BF%E3%83%AB%E3%83%98%E3%83%AB%E3%82%B9%E3%83%A9%E3%82%B8%E3%82%AA/id1649348148`,
+    podcast: `https://podcasts.apple.com/jp/podcast/%E3%83%8A%E3%82%AA%E3%81%AE%E3%83%A1%E3%83%B3%E3%82%BF%E3%83%AB%E3%83%98%E3%83%AB%E3%82%B9%E3%83%A9%E3%82%B8%E3%82%AA/id1649348148`,
   },
   category: [
       {
