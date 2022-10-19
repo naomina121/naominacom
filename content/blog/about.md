@@ -9,34 +9,38 @@ description: ナオについて自己紹介をしていきます。
 
 このページを見に来てくださってありがとうございます！
 
-とても嬉しいです♪
+少しながら私に興味を持っていただいて嬉しいです。
 
 では、自己紹介を始めていきますね♪
 
-### 基本情報貼りつけちゃいますﾍﾟﾀﾍﾟﾀ(○・ω・)ﾉﾉ□
+### 基本情報
 
-- 1990年生まれのアラサーです。
-- 28歳の時に、仕事のストレスで統合失調症を発症。
-- 趣味はプログラミング、苦手なものはデザイン。
+ﾍﾟﾀﾍﾟﾀ(○・ω・)ﾉﾉ□
+
+- 1990年生まれの女性です。
+- 札幌在住。
+- 統合失調症持ち、精神障害2級。
+- 趣味は、プログラミング、音楽鑑賞。
+- 苦手なことは、デザインを考えること。
 - 愛する人は年上の彼氏さんです！
 
-###  私の性格について
+### Twitter
 
-ｩ─σ(・´-・`*)─ﾝ
+実は、<a href='https://twitter.com/naominamecom' class='link_name' target='_blank'>Twitter</a>で呟いてたりします。
 
-自分で自分の性格を語るって難しいですね笑
+絡んでくれるとものすごく私が尻尾を振って喜びます！
 
-えと、対人関係にはものすごく気を使いますし、気を使いすぎて疲れてしまいます(o_ _)ノ彡
+### ポッドキャスト
 
-誰かとお話ししても、自分の言ったことを後々家に帰って、一人になってあんなことを言うんじゃなかったとか後悔したり、不器用な人間だったりします。
+実は実はですよ！ナオのメンタルヘルスという、心の病気や健康に関してをテーマとしたポッドキャストもしています。
 
-ただ、そんな私でも、<b>誰かが喜んでくれる姿がとても自分のことのように嬉しくなって、やっぱり人と関わりたいなって思ってしまう</b>のです。
+是非ともお聴きくださいませ。
 
-そういう意味では、自分では、人懐っこい性格なのだと思います！
+<iframe allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write" width="100%" height="450" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="https://embed.podcasts.apple.com/jp/podcast/%E3%83%8A%E3%82%AA%E3%81%AE%E3%83%A1%E3%83%B3%E3%82%BF%E3%83%AB%E3%83%98%E3%83%AB%E3%82%B9%E3%83%A9%E3%82%B8%E3%82%AA/id1649348148"></iframe>
 
-### ブログを開設した理由とは？
+## どうして、ブログを作ったの？
 
-彼氏さんがうつ病を再発してしまったことによって、私の病気の知識不足を感じてしまったため、<span class='tyuui'>私自身、もっと、うつ病について理解したい</span>と思ったことがきっかけでした。
+ブログを作った理由としては、彼氏さんがうつ病を再発してしまったことによって、私の病気の知識不足を感じてしまったため、<span class='tyuui'>私自身、もっと、うつ病について理解したい</span>と思ったことがきっかけでした。
 
 そのため、得られた知識をブログでアウトプットすることにより、より<b class='red'>うつ病に対しての理解を深め彼氏さんの役に立ちたい</b>という強い思いから、勢いでブログを作りました。
 
@@ -44,7 +48,7 @@ description: ナオについて自己紹介をしていきます。
 
 しかし、そうした過程で、私自身も統合失調症で病気を抱えていることもあり、うつ病のみならず、さまざまな精神病を取り扱うことで、<b>私だけでなく、色々な人のお役に立てる記事を作れるのではないかという欲が出てきてしまい、テーマが拡大した結果今のブログに至ったわけなのです。</b>
 
-### ブログのコンセプトについて
+### ついでなので、ブログのコンセプトとか語っちゃいます。
 
 コンセプトって言い方も大袈裟な気がしますが・・・
 
@@ -52,7 +56,7 @@ description: ナオについて自己紹介をしていきます。
 
 <br>
 
-<p class="big">「<span class='orange'>読んで下さった方が幸せになる記事を書き続けたい</span>」</p>
+<p class="big">「<span class='orange'>読んで下さった方が幸せになるまたは楽しめる記事を書き続けたい</span>」</p>
 
 本当、これのみなんです。
 
@@ -81,16 +85,4 @@ description: ナオについて自己紹介をしていきます。
 
 
 
-## Twitter
 
-実は、<a href='https://twitter.com/naominamecom' class='link_name' target='_blank'>Twitter</a>で呟いてたりします。
-
-絡んでくれるとものすごく私が尻尾を振って喜びます！
-
-## ポッドキャスト
-
-実は実はですよ！ナオのメンタルヘルスという、心の病気や健康に関してをテーマとしたポッドキャストもしています。
-
-是非ともお聴きくださいませ。
-
-<iframe allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write" width="100%" height="450" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="https://embed.podcasts.apple.com/jp/podcast/%E3%83%8A%E3%82%AA%E3%81%AE%E3%83%A1%E3%83%B3%E3%82%BF%E3%83%AB%E3%83%98%E3%83%AB%E3%82%B9%E3%83%A9%E3%82%B8%E3%82%AA/id1649348148"></iframe>
