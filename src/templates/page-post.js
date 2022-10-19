@@ -98,7 +98,7 @@ const BlogEntry = styled.section`
   border-radius:6px;
   }
   ul{
-background: #fffaeb;
+    background: #fffaeb;
     padding: 30px;
     border: 3px solid #bb9d27;
     li{
@@ -108,6 +108,9 @@ background: #fffaeb;
       padding:5px;
       color:#816a0f;
       font-weight:600;
+      a{
+        color:#3f51b5;
+      }
     }
   }
 `
