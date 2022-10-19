@@ -24,6 +24,23 @@ body.fixed {
   text-decoration: underline;
 }
 
+.border{
+  border:none;
+  margin:40px 0;
+  display:block;
+  border-bottom:1px dashed #212121;
+}
+
+.right{
+  text-align: right;
+  margin-left:auto;
+  display:block;
+}
+
+.center{
+  text-align: center;
+}
+
 .green{
   color:rgb(0 79 0);
   font-weight:600;
@@ -116,10 +133,8 @@ body.fixed {
 .information .tags ul li{
 background: #eae9e9;
 background:#fbf4dd;
-    padding: 0 5px;
-    margin: 5px 8px;
-        display: flex;
-    align-items: center;
+padding: 0 5px;
+margin: 5px 8px;
 }
 .information .tags ul li a{
     color: #333;
