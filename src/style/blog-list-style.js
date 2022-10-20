@@ -2,6 +2,20 @@ import styled from "styled-components"
 
 export const BlogListHeader = styled.header`
   text-align:center;
+  .search{
+   display:flex;
+    justify-content: flex-end;
+    font-size:15px;
+    margin-top:10px;
+    @media screen and (max-width:1024px){
+    justify-content: center;
+    }
+    input{
+      padding:5px;
+      border:1px solid #ccc;
+      border-radius:4px;
+    }
+  }
   .ganre{
     display:flex;
     justify-content: flex-end;
@@ -20,7 +34,6 @@ export const BlogListHeader = styled.header`
         content: '';
         background: #f4f4f4;
         border-radius: 100%;
-        border: 1px solid darken(#f4f4f4, 25%);
         border:1px solid #ccc;
         display: inline-block;
         width: 1.4em;

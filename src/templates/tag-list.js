@@ -1,4 +1,4 @@
-import * as React from "react"
+import React, { useState } from "react"
 import { Link, graphql } from "gatsby"
 //import TagCloud from "../components/tag-cloud"
 import ModalSeach from "../components/modal-search"
@@ -16,28 +16,57 @@ import Img from "../components/img"
 const TagList = ({ pageContext, data, location }) => {
   const { page, current, tag } = pageContext
   const { totalCount, nodes } = data.allMarkdownRemark
-  const posts = nodes
   const title = "記事一覧"
+  const emptyQuery = ""
 
-  if (posts.length === 0) {
-    return (
-      <Layout location={location} title={title}>
-        <p>
-          No blog posts found. Add markdown posts to "content/blog" (or the
-          directory you specified for the "gatsby-source-filesystem" plugin in
-          gatsby-config.js).
-        </p>
-      </Layout>
-    )
-  }
 
+  const [state, setState] = useState({
+    filteredData: [],
+    query: emptyQuery,
+  })
+
+  const handleInputChange = event => {
+   let query = ""
+   query = event.target.value
+
+   const posts = nodes || []
+
+   const filteredData = posts.filter(post =>{
+  if(query !== ''){
+      const description = post.frontmatter.description
+      const title = post.frontmatter.title
+     return (
+       description.toLowerCase().includes(query.toLowerCase()) ||
+       title.toLowerCase().includes(query.toLowerCase())
+       )
+    }
+  })
+
+  setState({
+     query,
+     filteredData,
+   })
+ }
+
+ const { filteredData, query } = state
+ const hasSearchResults = filteredData && query !== emptyQuery
+ const posts = hasSearchResults ? filteredData : nodes
   return (
     <Layout location={location} title={tag}>
       <BreadCrumbList parent="tags" location={location} title={tag} />
 
       <BlogListHeader>
         <h1>{tag}</h1>
-        <p>現在 {totalCount} 記事あります</p>
+        <p>現在 {posts.length} 記事あります</p>
+<div className="search">
+        <input
+          name="search_text"
+   				type="text"
+   				aria-label="Search"
+   				placeholder="検索ワードを入力..."
+          onChange={handleInputChange}
+   			/>
+        </div>
       </BlogListHeader>
       <BlogListWrapper>
         {posts.map(post => {
@@ -81,8 +110,8 @@ const TagList = ({ pageContext, data, location }) => {
         })}
       </BlogListWrapper>
       {/* <Pagination num={page} current={current} type={`tags/${tag}`} ></Pagination> */}
-      <h2>サイト内検索</h2>
-      <ModalSeach></ModalSeach>
+      {/* <h2>サイト内検索</h2>
+      <ModalSeach></ModalSeach> */}
             {/* <BlogListHeader>
         <h2>タグクラウド</h2>
         <p>現在投稿中のジャンルの記事たちです</p>

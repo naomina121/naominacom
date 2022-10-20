@@ -20,24 +20,33 @@ const BlogList = ({ pageContext, data, location }) => {
   const title = "記事一覧"
   const emptyQuery = ""
 
+
   const [state, setState] = useState({
     filteredData: [],
     query: emptyQuery,
   })
 
   const handleInputChange = event => {
-   const query = event.target.value
+   let query = ""
+   query = event.target.value
+
    const posts = nodes || []
 
    const filteredData = posts.filter(post =>{
-    if(query !== ''){
+    if(query !== '' && event.target.name != 'search_text'){
     const tags = post.frontmatter.tags
     return(
       tags.includes(query)
     )
+    }else if(query !== '' && event.target.name == 'search_text'){
+      const description = post.frontmatter.description
+      const title = post.frontmatter.title
+     return (
+       description.toLowerCase().includes(query.toLowerCase()) ||
+       title.toLowerCase().includes(query.toLowerCase())
+       )
     }
   })
-
 
   setState({
      query,
@@ -48,17 +57,6 @@ const BlogList = ({ pageContext, data, location }) => {
  const { filteredData, query } = state
  const hasSearchResults = filteredData && query !== emptyQuery
  const posts = hasSearchResults ? filteredData : nodes
-  if (posts.length === 0) {
-    return (
-      <Layout location={location} title={title}>
-        <p>
-          No blog posts found. Add markdown posts to "content/blog" (or the
-          directory you specified for the "gatsby-source-filesystem" plugin in
-          gatsby-config.js).
-        </p>
-      </Layout>
-    )
-  }
 
   return (
     <Layout location={location} title={title}>
@@ -67,12 +65,21 @@ const BlogList = ({ pageContext, data, location }) => {
         <h1>{title}</h1>
         <p>現在 {posts.length} 記事あります</p>
         <div className="ganre">
-
         <div className="radio"><input type="radio" id="all" name="tags" className="tags" value="" onChange={handleInputChange} /><label className="radio-label" for="all">全記事取得</label></div>
 
         <div className="radio"><input type="radio" id="knowledge" name="tags" className="tags" value="知識" onChange={handleInputChange} /><label className="radio-label" for="knowledge">知識系のみ</label></div>
 
-        <div class="radio"><input type="radio" id="newssource" name="tags" className="tags" value="ネタ" onChange={handleInputChange} /><label for="newssource" className="radio-label">ネタ系のみ</label></div>
+        <div class="radio"><input type="radio" id="newssource" name="tags" className="tags" value="ネタ" onChange={handleInputChange} /><label for="newssource" className="radio-label"
+        >ネタ系のみ</label></div>
+        </div>
+        <div className="search">
+        <input
+          name="search_text"
+   				type="text"
+   				aria-label="Search"
+   				placeholder="検索ワードを入力..."
+          onChange={handleInputChange}
+   			/>
         </div>
       </BlogListHeader>
       <BlogListWrapper>
@@ -128,8 +135,8 @@ const BlogList = ({ pageContext, data, location }) => {
         })}
       </BlogListWrapper>
      {/* <Pagination num={page} current={current} type=""></Pagination> */}
-          <h2>サイト内検索</h2>
-      <ModalSeach></ModalSeach>
+          {/* <h2>サイト内検索</h2>
+      <ModalSeach></ModalSeach> */}
             {/* <BlogListHeader>
         <h2>タグクラウド</h2>
         <p>現在投稿中のジャンルの記事たちです</p>

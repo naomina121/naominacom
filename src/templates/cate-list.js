@@ -21,24 +21,33 @@ const CateList = ({ pageContext, data, location }) => {
   const { nodes } = data.allMarkdownRemark
   const emptyQuery = ""
 
+
   const [state, setState] = useState({
     filteredData: [],
     query: emptyQuery,
   })
 
   const handleInputChange = event => {
-   const query = event.target.value
+   let query = ""
+   query = event.target.value
+
    const posts = nodes || []
 
    const filteredData = posts.filter(post =>{
-    if(query !== ''){
+    if(query !== '' && event.target.name != 'search_text'){
     const tags = post.frontmatter.tags
     return(
       tags.includes(query)
     )
+    }else if(query !== '' && event.target.name == 'search_text'){
+      const description = post.frontmatter.description
+      const title = post.frontmatter.title
+     return (
+       description.toLowerCase().includes(query.toLowerCase()) ||
+       title.toLowerCase().includes(query.toLowerCase())
+       )
     }
   })
-
 
   setState({
      query,
@@ -53,22 +62,13 @@ const CateList = ({ pageContext, data, location }) => {
   //const posts = nodes
   const cate = siteMetadata.category.find(item => item.slug === cateSlug)
 
-  if (posts.length === 0) {
-    return (
-      <Layout location={location} title="記事一覧">
-        <p>
-          まだ記事がありません。
-        </p>
-      </Layout>
-    )
-  }
-
   return (
     <Layout location={location} title={cate.name}>
       <BreadCrumbList parent="blogs" location={location} title={cate.name} />
       <BlogListHeader>
         <h1>{cate.name}</h1>
         <p>{cate.description}</p>
+        <p>現在 {posts.length} 記事あります</p>
         <div className="ganre">
 
         <div className="radio"><input type="radio" id="all" name="tags" className="tags" value="" onChange={handleInputChange} /><label className="radio-label" for="all">全記事取得</label></div>
@@ -76,6 +76,15 @@ const CateList = ({ pageContext, data, location }) => {
         <div className="radio"><input type="radio" id="knowledge" name="tags" className="tags" value="知識" onChange={handleInputChange} /><label className="radio-label" for="knowledge">知識系のみ</label></div>
 
         <div class="radio"><input type="radio" id="newssource" name="tags" className="tags" value="ネタ" onChange={handleInputChange} /><label for="newssource" className="radio-label">ネタ系のみ</label></div>
+        </div>
+        <div className="search">
+        <input
+          name="search_text"
+   				type="text"
+   				aria-label="Search"
+   				placeholder="検索ワードを入力..."
+          onChange={handleInputChange}
+   			/>
         </div>
       </BlogListHeader>
 
@@ -129,8 +138,8 @@ const CateList = ({ pageContext, data, location }) => {
         })}
       </BlogListWrapper>
       {/* <Pagination num={page} current={current} type={cateSlug} ></Pagination> */}
-      <h2>サイト内検索</h2>
-      <ModalSeach></ModalSeach>
+      {/* <h2>サイト内検索</h2>
+      <ModalSeach></ModalSeach> */}
             {/* <BlogListHeader>
         <h2>タグクラウド</h2>
         <p>現在投稿中のジャンルの記事たちです</p>
