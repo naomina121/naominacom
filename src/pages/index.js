@@ -125,6 +125,17 @@ const BlogIndex = ({ data, location }) => {
                     <span>{title}</span>
                   </Link>
                 </h3>
+<Link className="cate" to={`/blogs/${post.frontmatter.cate}/`}>{cateName}</Link>
+
+                <ul className='tags'>
+                  {tags.map((tag, index) => {
+                    return (
+                      <li key={`tag${index}`}>
+                          <Link className="tag" to={`/blogs/tags/${tag}/`}>{tag}</Link>
+                      </li>
+                    )
+                })}
+                </ul>
                 </section>
               </article>
             </li>
@@ -132,9 +143,10 @@ const BlogIndex = ({ data, location }) => {
         })}
       </BlogListWrapper>
                 <Link to="/blogs/" className="morePosts">もっと記事を見る</Link>
-
+          <div className="search">
           <h2 className="aside_title">サイト内検索</h2>
           <ModalSeach></ModalSeach>
+          </div>
         </aside>
       </div>
     </Layout>
