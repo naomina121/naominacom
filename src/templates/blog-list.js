@@ -1,4 +1,4 @@
-import * as React from "react"
+import React, { useState } from "react"
 import { Link, graphql } from "gatsby"
 import { siteMetadata } from "../../gatsby-config"
 import Layout from "../components/layout"
@@ -11,15 +11,43 @@ import { BlogListWrapper, BlogListHeader } from "../style/blog-list-style"
 
 //画像読み込み
 import Img from "../components/img"
-import Pagination from "../components/pagination"
+//import Pagination from "../components/pagination"
 
 const BlogList = ({ pageContext, data, location }) => {
 
   const { page, current } = pageContext
   const { totalCount, nodes } = data.allMarkdownRemark
-  const posts = nodes
   const title = "記事一覧"
+  const emptyQuery = ""
 
+  const [state, setState] = useState({
+    filteredData: [],
+    query: emptyQuery,
+  })
+
+  const handleInputChange = event => {
+   const query = event.target.value
+   const posts = nodes || []
+
+   const filteredData = posts.filter(post =>{
+    if(query !== ''){
+    const tags = post.frontmatter.tags
+    return(
+      tags.includes(query)
+    )
+    }
+  })
+
+
+  setState({
+     query,
+     filteredData,
+   })
+ }
+
+ const { filteredData, query } = state
+ const hasSearchResults = filteredData && query !== emptyQuery
+ const posts = hasSearchResults ? filteredData : nodes
   if (posts.length === 0) {
     return (
       <Layout location={location} title={title}>
@@ -37,7 +65,15 @@ const BlogList = ({ pageContext, data, location }) => {
     <BreadCrumbList parent="root" location={location} title={title} />
       <BlogListHeader>
         <h1>{title}</h1>
-        <p>現在 {totalCount} 記事あります</p>
+        <p>現在 {posts.length} 記事あります</p>
+        <div className="ganre">
+
+        <div className="radio"><input type="radio" id="all" name="tags" className="tags" value="" onChange={handleInputChange} /><label className="radio-label" for="all">全記事取得</label></div>
+
+        <div className="radio"><input type="radio" id="knowledge" name="tags" className="tags" value="知識" onChange={handleInputChange} /><label className="radio-label" for="knowledge">知識系のみ</label></div>
+
+        <div class="radio"><input type="radio" id="newssource" name="tags" className="tags" value="ネタ" onChange={handleInputChange} /><label for="newssource" className="radio-label">ネタ系のみ</label></div>
+        </div>
       </BlogListHeader>
       <BlogListWrapper>
         {posts.map(post => {
@@ -91,7 +127,7 @@ const BlogList = ({ pageContext, data, location }) => {
           )
         })}
       </BlogListWrapper>
-     <Pagination num={page} current={current} type=""></Pagination>
+     {/* <Pagination num={page} current={current} type=""></Pagination> */}
           <h2>サイト内検索</h2>
       <ModalSeach></ModalSeach>
             {/* <BlogListHeader>
@@ -115,15 +151,13 @@ export default BlogList
 )
 
 export const pageQuery = graphql`
-  query ($limit: Int!, $skip: Int!) {
+  query{
     site {
       siteMetadata {
         title
       }
     }
     allMarkdownRemark(
-      limit: $limit
-      skip: $skip
       sort: { fields: [frontmatter___date], order: DESC }
       # pagetype=blogで絞り込む
       filter: { frontmatter: { pagetype: { eq: "blog" } } }

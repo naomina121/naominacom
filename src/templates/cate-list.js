@@ -1,5 +1,7 @@
-import * as React from "react"
+// import * as React from "react"
+import React, { useState } from "react"
 import { Link, graphql } from "gatsby"
+
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
@@ -12,22 +14,50 @@ import Img from "../components/img"
 // 追加
 import { siteMetadata } from "../../gatsby-config"
 
-import Pagination from "../components/pagination"
+//import Pagination from "../components/pagination"
 
 const CateList = ({ pageContext, data, location }) => {
   const { page, current, cateSlug } = pageContext
   const { nodes } = data.allMarkdownRemark
-  const posts = nodes
+  const emptyQuery = ""
 
+  const [state, setState] = useState({
+    filteredData: [],
+    query: emptyQuery,
+  })
+
+  const handleInputChange = event => {
+   const query = event.target.value
+   const posts = nodes || []
+
+   const filteredData = posts.filter(post =>{
+    if(query !== ''){
+    const tags = post.frontmatter.tags
+    return(
+      tags.includes(query)
+    )
+    }
+  })
+
+
+  setState({
+     query,
+     filteredData,
+   })
+ }
+
+ const { filteredData, query } = state
+ const hasSearchResults = filteredData && query !== emptyQuery
+ const posts = hasSearchResults ? filteredData : nodes
+
+  //const posts = nodes
   const cate = siteMetadata.category.find(item => item.slug === cateSlug)
 
   if (posts.length === 0) {
     return (
       <Layout location={location} title="記事一覧">
         <p>
-          No blog posts found. Add markdown posts to "content/blog" (or the
-          directory you specified for the "gatsby-source-filesystem" plugin in
-          gatsby-config.js).
+          まだ記事がありません。
         </p>
       </Layout>
     )
@@ -39,7 +69,16 @@ const CateList = ({ pageContext, data, location }) => {
       <BlogListHeader>
         <h1>{cate.name}</h1>
         <p>{cate.description}</p>
+        <div className="ganre">
+
+        <div className="radio"><input type="radio" id="all" name="tags" className="tags" value="" onChange={handleInputChange} /><label className="radio-label" for="all">全記事取得</label></div>
+
+        <div className="radio"><input type="radio" id="knowledge" name="tags" className="tags" value="知識" onChange={handleInputChange} /><label className="radio-label" for="knowledge">知識系のみ</label></div>
+
+        <div class="radio"><input type="radio" id="newssource" name="tags" className="tags" value="ネタ" onChange={handleInputChange} /><label for="newssource" className="radio-label">ネタ系のみ</label></div>
+        </div>
       </BlogListHeader>
+
       <BlogListWrapper>
         {posts.map(post => {
           const title = post.frontmatter.title || post.fields.slug
@@ -89,7 +128,7 @@ const CateList = ({ pageContext, data, location }) => {
           )
         })}
       </BlogListWrapper>
-      <Pagination num={page} current={current} type={cateSlug} ></Pagination>
+      {/* <Pagination num={page} current={current} type={cateSlug} ></Pagination> */}
       <h2>サイト内検索</h2>
       <ModalSeach></ModalSeach>
             {/* <BlogListHeader>
@@ -114,19 +153,18 @@ export const Head = ({ data,location,pageContext }) => (
 )
 
 export const pageQuery = graphql`
-  query ($cateSlug: String, $limit: Int!, $skip: Int!) {
+  query ($cateSlug: String,$tags: String) {
     site {
       siteMetadata {
         title
       }
     }
     allMarkdownRemark(
-      limit: $limit
-      skip: $skip
       sort: { fields: [frontmatter___date], order: DESC }
       # pagetype=blogかつ cateが $cateSlugと一致するものだけ絞り込む
       filter: {
-        frontmatter: { pagetype: { eq: "blog" }, cate: { eq: $cateSlug } }
+        frontmatter: { pagetype: { eq: "blog" }, cate: { eq: $cateSlug }
+      tags:{eq: $tags} }
       }
     ) {
       nodes {

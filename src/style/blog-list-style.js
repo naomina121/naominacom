@@ -2,6 +2,72 @@ import styled from "styled-components"
 
 export const BlogListHeader = styled.header`
   text-align:center;
+  .ganre{
+    display:flex;
+    justify-content: flex-end;
+    font-size:14px;
+    @media screen and (max-width:1024px){
+    justify-content: center;
+    }
+  }
+  .radio {
+  margin: 0.5rem;
+  input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    + .radio-label {
+      &:before {
+        content: '';
+        background: #f4f4f4;
+        border-radius: 100%;
+        border: 1px solid darken(#f4f4f4, 25%);
+        border:1px solid #ccc;
+        display: inline-block;
+        width: 1.4em;
+        height: 1.4em;
+        position: relative;
+        top: 0;
+        margin-right: 5px;
+        vertical-align: top;
+        cursor: pointer;
+        text-align: center;
+        transition: all 250ms ease;
+      }
+    }
+    &:checked {
+      + .radio-label {
+        &:before {
+          background-color: #3197EE;
+          box-shadow: inset 0 0 0 4px #f4f4f4;
+        }
+      }
+    }
+    &:focus {
+      + .radio-label {
+        &:before {
+          outline: none;
+          border-color: #3197EE;
+        }
+      }
+    }
+    &:disabled {
+      + .radio-label {
+        &:before {
+          box-shadow: inset 0 0 0 4px #f4f4f4;
+          border-color: darken(#f4f4f4, 25%);
+          background: darken(#f4f4f4, 25%);
+        }
+      }
+    }
+    + .radio-label {
+      &:empty {
+        &:before {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+}
   h1 {
     &:after {
       margin: 0 auto;

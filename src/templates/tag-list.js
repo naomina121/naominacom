@@ -11,7 +11,7 @@ import { BlogListWrapper, BlogListHeader } from "../style/blog-list-style"
 //画像読み込み
 import Img from "../components/img"
 
-import Pagination from "../components/pagination"
+// import Pagination from "../components/pagination"
 
 const TagList = ({ pageContext, data, location }) => {
   const { page, current, tag } = pageContext
@@ -80,7 +80,7 @@ const TagList = ({ pageContext, data, location }) => {
           )
         })}
       </BlogListWrapper>
-      <Pagination num={page} current={current} type={`tags/${tag}`} ></Pagination>
+      {/* <Pagination num={page} current={current} type={`tags/${tag}`} ></Pagination> */}
       <h2>サイト内検索</h2>
       <ModalSeach></ModalSeach>
             {/* <BlogListHeader>
@@ -103,15 +103,13 @@ export const Head = ({ data,location,pageContext }) => (
 )
 
 export const pageQuery = graphql`
-  query ($tag: String, $limit: Int!, $skip: Int!) {
+  query ($tag: String) {
     site {
       siteMetadata {
         title
       }
     }
     allMarkdownRemark(
-      limit: $limit
-      skip: $skip
       sort: { fields: [frontmatter___date], order: DESC }
       # pagetype=blogで絞り込む
       filter: {
