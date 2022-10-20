@@ -81,11 +81,11 @@ const BlogList = ({ pageContext, data, location }) => {
                     )
                 })}
                 </ul>
-                  <p
+                  {/* <p
                     dangerouslySetInnerHTML={{
                       __html: post.frontmatter.description || post.excerpt,
                     }}
-                  />
+                  /> */}
               </article>
             </li>
           )

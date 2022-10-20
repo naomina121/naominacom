@@ -69,11 +69,11 @@ const TagList = ({ pageContext, data, location }) => {
                   </Link>
                 </h2>
                 <Link className="cate" to={`/blogs/${cate}/`}>{cateName}</Link>
-                  <p
+                  {/* <p
                     dangerouslySetInnerHTML={{
                       __html: post.frontmatter.description || post.excerpt,
                     }}
-                  />
+                  /> */}
                 </section>
               </article>
             </li>

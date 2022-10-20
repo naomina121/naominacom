@@ -78,11 +78,11 @@ const CateList = ({ pageContext, data, location }) => {
                     )
                 })}
                 </ul>
-                  <p
+                  {/* <p
                     dangerouslySetInnerHTML={{
                       __html: post.frontmatter.description || post.excerpt,
                     }}
-                  />
+                  /> */}
                 </section>
               </article>
             </li>

@@ -46,6 +46,10 @@ body.fixed {
   font-weight:600;
 }
 
+.teisei{
+  text-decoration: line-through;
+}
+
 .red{
   color:rgb(246, 67, 67);
 }
@@ -110,6 +114,9 @@ body.fixed {
 
 .information li .tag,.information .cate{
   all:unset;
+}
+.information li .tag::after,.information li .tag::before{
+  display:none;
 }
 
 .information .cate{
