@@ -46,6 +46,10 @@ body.fixed {
   font-weight:600;
 }
 
+.pink{
+  color:palevioletred;
+}
+
 .teisei{
   text-decoration: line-through;
 }
