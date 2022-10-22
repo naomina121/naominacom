@@ -24,6 +24,12 @@ body.fixed {
   text-decoration: underline;
 }
 
+strong{
+  font-size:18px;
+    color: #152373;
+    background: linear-gradient(transparent 60%, #ffff5c 60%);
+}
+
 .border{
   border:none;
   margin:40px 0;
@@ -400,6 +406,12 @@ main article .articleBody h3 {
   color: #666;
   border-radius: 4px;
   border-bottom: none;
+}
+
+main article .articleBody h4{
+  padding:10px;
+  
+  border-left:6px solid #a78b29;
 }
 
 main article .articleBody ul {
