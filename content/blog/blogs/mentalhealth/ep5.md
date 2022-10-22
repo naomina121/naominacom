@@ -4,7 +4,7 @@ date: 2022-10-22
 modifieddate: 2022-10-22
 pagetype: blog
 hero: thumbnail/mentalhealth_ep5.jpg
-description:
+description: 脳を活性化させる方法のメリットについてご紹介していきます。
 cate: mentalhealth
 tags: [知識,5分以上]
 ---
