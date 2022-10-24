@@ -105,6 +105,20 @@ export const BlogListWrapper = styled.ol`
     }
     h2 {
         font-size: 18px;
+        padding-top:0;
+        margin-top:0;
+    }
+    h3{
+        margin-top:0;
+        padding-top:0;
+    }
+    time {
+      font-weight: 700;
+      // position: absolute;
+      // left: 0;
+      // top: 10px;
+      // background: rgba(255,255,255,.7);
+      padding: 0 10px;
     }
   }
   .thumbnail {
@@ -117,15 +131,6 @@ export const BlogListWrapper = styled.ol`
       width:100%;
       object-fit:cover;
     }
-    }
-
-    time {
-      font-weight: 700;
-      position: absolute;
-      left: 0;
-      top: 10px;
-      background: rgba(255,255,255,.7);
-      padding: 0 10px;
     }
   }
   @media screen and (min-width: 768px) {

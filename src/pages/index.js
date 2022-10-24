@@ -113,13 +113,13 @@ const BlogIndex = ({ data, location }) => {
                   className="thumbnail"
                 >
                   <Img alt={title} image={post.frontmatter.hero}></Img>
+                </Link>
+                <section>
                   <small>
                     <time dateTime={post.frontmatter.date}>
                       {post.frontmatter.date}
                     </time>
                   </small>
-                </Link>
-                <section>
                 <h3>
                   <Link to={post.fields.slug}>
                     <span>{title}</span>
