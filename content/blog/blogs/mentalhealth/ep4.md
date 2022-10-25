@@ -81,10 +81,6 @@ tags: [ネタ]
 
 気になる脳の血流の増やし方の記事については知識系記事として近日中に発信する予定です。追記したらこちらにリンク貼ります。
 
-いやそれまで待てないよって言う方はポッドキャストでも配信しているのでぜひお聴きくださいませ
-
-<iframe allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write" frameborder="0" height="175" style="width:100%;max-width:660px;overflow:hidden;background:transparent;" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="https://embed.podcasts.apple.com/jp/podcast/%E8%84%B3%E3%81%AE%E6%B4%BB%E6%80%A7%E5%8C%96%E3%81%A8%E7%B2%BE%E7%A5%9E%E7%97%85%E3%81%AE%E9%96%A2%E4%BF%82%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6/id1649348148?i=1000582960073"></iframe>
-
 ## 追記：10月22日 脳を活性化する記事公開しました
 
 <card slug="/blogs/mentalhealth/ep5/"></card>
